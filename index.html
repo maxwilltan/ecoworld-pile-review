@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoWorld Pile Drawing Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">E</div>
+        <div>
+          <div class="brand-name">EcoWorld</div>
+          <div class="brand-subtitle">Pile Review Portal</div>
+        </div>
+      </div>
+
+      <nav class="steps" aria-label="Workflow">
+        <button class="step active" data-target="property-section">
+          <span class="step-number">1</span>
+          <span><strong>Property</strong><small>Select project & garden</small></span>
+        </button>
+        <button class="step" data-target="upload-section">
+          <span class="step-number">2</span>
+          <span><strong>Drawings</strong><small>Upload & store files</small></span>
+        </button>
+        <button class="step" data-target="analysis-section">
+          <span class="step-number">3</span>
+          <span><strong>AI Review</strong><small>Extract & compare specs</small></span>
+        </button>
+      </nav>
+
+      <div class="storage-box">
+        <div class="storage-dot"></div>
+        <div>
+          <strong>Storage connected</strong>
+          <span>Browser IndexedDB</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DEVELOPMENT QUALITY REVIEW</p>
+          <h1>Foundation Drawing Intelligence</h1>
+          <p class="subtitle">Select a property, upload the four required files, then run the pile specification comparison.</p>
+        </div>
+        <div class="project-pill" id="projectPill">No project selected</div>
+      </header>
+
+      <section id="property-section" class="panel active-panel">
+        <div class="panel-header">
+          <div>
+            <span class="section-kicker">SECTION 01</span>
+            <h2>Select Property</h2>
+            <p>Choose a development area first. The garden list will update automatically.</p>
+          </div>
+          <div class="status-badge neutral" id="propertyStatus">Not completed</div>
+        </div>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>Development Area</span>
+            <select id="developmentSelect">
+              <option value="">Select development</option>
+              <option value="eco-grandeur">Eco Grandeur</option>
+              <option value="eco-majestic">Eco Majestic</option>
+              <option value="eco-botanic">Eco Botanic</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Garden / Precinct</span>
+            <select id="gardenSelect" disabled>
+              <option value="">Select a development first</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="selection-preview" id="selectionPreview">
+          <div class="preview-icon">⌂</div>
+          <div>
+            <strong>Property not selected</strong>
+            <span>Your selected project will appear here.</span>
+          </div>
+        </div>
+
+        <div class="panel-actions">
+          <span class="helper-text">Your selection is saved automatically on this device.</span>
+          <button class="primary-btn" id="continueToUploads" disabled>Continue to Drawings →</button>
+        </div>
+      </section>
+
+      <section id="upload-section" class="panel">
+        <div class="panel-header">
+          <div>
+            <span class="section-kicker">SECTION 02</span>
+            <h2>Upload Project Drawings</h2>
+            <p>Exactly one file is required for each category. Files are persisted in browser storage after upload.</p>
+          </div>
+          <div class="status-badge neutral" id="uploadStatus">0 / 4 uploaded</div>
+        </div>
+
+        <div class="upload-grid" id="uploadGrid">
+          <article class="upload-card" data-file-key="construction">
+            <div class="upload-card-top">
+              <span class="file-index">01</span>
+              <span class="required-tag">Required</span>
+            </div>
+            <h3>Construction Drawing</h3>
+            <p>Structural / construction foundation and pile details.</p>
+            <input type="file" id="constructionFile" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" hidden />
+            <button class="upload-btn" data-input="constructionFile">Choose File</button>
+            <div class="file-info" id="constructionInfo">No file uploaded</div>
+          </article>
+
+          <article class="upload-card" data-file-key="architecture">
+            <div class="upload-card-top">
+              <span class="file-index">02</span>
+              <span class="required-tag">Required</span>
+            </div>
+            <h3>Architecture Drawing</h3>
+            <p>Architectural plans used for cross-checking layout and grid information.</p>
+            <input type="file" id="architectureFile" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" hidden />
+            <button class="upload-btn" data-input="architectureFile">Choose File</button>
+            <div class="file-info" id="architectureInfo">No file uploaded</div>
+          </article>
+
+          <article class="upload-card" data-file-key="efficiency">
+            <div class="upload-card-top">
+              <span class="file-index">03</span>
+              <span class="required-tag">Required</span>
+            </div>
+            <h3>Pile Efficiency Drawing</h3>
+            <p>Pile group efficiency, arrangement, spacing or capacity information.</p>
+            <input type="file" id="efficiencyFile" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" hidden />
+            <button class="upload-btn" data-input="efficiencyFile">Choose File</button>
+            <div class="file-info" id="efficiencyInfo">No file uploaded</div>
+          </article>
+
+          <article class="upload-card" data-file-key="load">
+            <div class="upload-card-top">
+              <span class="file-index">04</span>
+              <span class="required-tag">Required</span>
+            </div>
+            <h3>Pile Load</h3>
+            <p>Pile load schedule, design load, test load or allowable working load.</p>
+            <input type="file" id="loadFile" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" hidden />
+            <button class="upload-btn" data-input="loadFile">Choose File</button>
+            <div class="file-info" id="loadInfo">No file uploaded</div>
+          </article>
+        </div>
+
+        <div class="storage-note">
+          <strong>Where are the files stored?</strong>
+          <p>This prototype uses IndexedDB, the browser's persistent local database. Uploads remain after refresh on the same computer/browser. It does not send confidential drawings to an external cloud service.</p>
+        </div>
+
+        <div class="panel-actions">
+          <button class="secondary-btn" id="clearFiles">Clear Uploaded Files</button>
+          <button class="primary-btn" id="continueToAnalysis" disabled>Continue to AI Review →</button>
+        </div>
+      </section>
+
+      <section id="analysis-section" class="panel">
+        <div class="panel-header">
+          <div>
+            <span class="section-kicker">SECTION 03</span>
+            <h2>AI / OCR Pile Review</h2>
+            <p>Reads PDF text or uses OCR for images, extracts pile-related values and compares the four documents.</p>
+          </div>
+          <div class="status-badge neutral" id="analysisStatus">Ready</div>
+        </div>
+
+        <div class="analysis-toolbar">
+          <div>
+            <strong id="analysisProject">No project selected</strong>
+            <span>All 4 files must be uploaded before analysis.</span>
+          </div>
+          <button class="primary-btn analyze-btn" id="runAnalysis" disabled>✦ Run AI Review</button>
+        </div>
+
+        <div class="progress-wrap hidden" id="progressWrap">
+          <div class="progress-header"><span id="progressText">Preparing...</span><span id="progressPercent">0%</span></div>
+          <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+
+        <div id="emptyAnalysis" class="empty-analysis">
+          <div class="ai-orb">AI</div>
+          <h3>Analysis has not been run yet</h3>
+          <p>Upload the required drawings, then run the review to extract pile specifications and identify mismatches.</p>
+        </div>
+
+        <div id="analysisResults" class="hidden">
+          <div class="summary-cards">
+            <div class="metric-card"><span>Files reviewed</span><strong id="metricFiles">4</strong></div>
+            <div class="metric-card"><span>Specifications found</span><strong id="metricSpecs">0</strong></div>
+            <div class="metric-card"><span>Potential mismatches</span><strong id="metricIssues">0</strong></div>
+            <div class="metric-card"><span>Review status</span><strong id="metricStatus">—</strong></div>
+          </div>
+
+          <div class="result-block">
+            <div class="result-heading">
+              <div><span class="section-kicker">EXTRACTED DATA</span><h3>Pile Specifications by Document</h3></div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Specification</th><th>Construction</th><th>Architecture</th><th>Pile Efficiency</th><th>Pile Load</th></tr>
+                </thead>
+                <tbody id="specTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="result-block">
+            <div class="result-heading">
+              <div><span class="section-kicker">COMPARISON</span><h3>Cross-Document Findings</h3></div>
+            </div>
+            <div id="comparisonList" class="comparison-list"></div>
+          </div>
+
+          <div class="result-block">
+            <div class="result-heading">
+              <div><span class="section-kicker">TRACEABILITY</span><h3>Extracted Text Preview</h3></div>
+              <button class="secondary-btn small" id="toggleText">Show text</button>
+            </div>
+            <div id="textPreviews" class="text-previews hidden"></div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Prototype review only.</strong> OCR and pattern extraction can miss or misread drawing information. Engineering decisions must still be checked against the signed drawings and calculations by the responsible qualified person.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

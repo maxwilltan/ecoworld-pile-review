@@ -128,6 +128,60 @@ async function dbClearProjectFiles() {
   });
 }
 
+async function dbDeleteFile(id) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction('files', 'readwrite');
+    tx.objectStore('files').delete(id);
+    tx.oncomplete = resolve;
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+function openStoredFile(key) {
+  const record = state.files[key];
+  if (!record?.blob) {
+    toast('Stored file could not be found.', 'error');
+    return;
+  }
+  const url = URL.createObjectURL(record.blob);
+  const opened = window.open(url, '_blank', 'noopener,noreferrer');
+  if (!opened) {
+    URL.revokeObjectURL(url);
+    toast('Your browser blocked the preview. Allow pop-ups or use Download.', 'error');
+    return;
+  }
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+function downloadStoredFile(key) {
+  const record = state.files[key];
+  if (!record?.blob) {
+    toast('Stored file could not be found.', 'error');
+    return;
+  }
+  const url = URL.createObjectURL(record.blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = record.name || `${key}-drawing`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function deleteStoredFile(key) {
+  const record = state.files[key];
+  if (!record) return;
+  if (!confirm(`Delete ${record.name} from this property's browser storage?`)) return;
+  await dbDeleteFile(record.id);
+  delete state.extracted[key];
+  await refreshFiles();
+  $('analysisResults').classList.add('hidden');
+  $('emptyAnalysis').classList.remove('hidden');
+  toast(`${fileConfig[key].label} deleted.`);
+}
+
 function populateGardens() {
   gardenSelect.innerHTML = '';
   if (!state.development) {
@@ -184,12 +238,25 @@ async function refreshFiles() {
     const info = $(cfg.info);
     const card = document.querySelector(`.upload-card[data-file-key="${key}"]`);
     const f = state.files[key];
+    let actions = card.querySelector('.stored-file-actions');
+    if (!actions) {
+      actions = document.createElement('div');
+      actions.className = 'stored-file-actions';
+      info.insertAdjacentElement('afterend', actions);
+    }
     if (f) {
       info.textContent = `✓ ${f.name} · ${prettyBytes(f.size)}`;
       card.classList.add('complete');
+      actions.innerHTML = `
+        <button type="button" class="file-action-btn" data-file-action="open" data-file-key="${key}">Open</button>
+        <button type="button" class="file-action-btn" data-file-action="download" data-file-key="${key}">Download</button>
+        <button type="button" class="file-action-btn danger" data-file-action="delete" data-file-key="${key}">Delete</button>`;
+      actions.classList.remove('hidden');
     } else {
       info.textContent = 'No file uploaded';
       card.classList.remove('complete');
+      actions.innerHTML = '';
+      actions.classList.add('hidden');
     }
   });
   const count = Object.keys(state.files).length;
@@ -491,6 +558,15 @@ $('continueToAnalysis').addEventListener('click', () => showPanel('analysis-sect
 
 document.querySelectorAll('.upload-btn').forEach(btn => btn.addEventListener('click', () => $(btn.dataset.input).click()));
 Object.entries(fileConfig).forEach(([key, cfg]) => $(cfg.input).addEventListener('change', e => handleFileInput(key, e.target.files[0])));
+
+$('uploadGrid').addEventListener('click', async e => {
+  const btn = e.target.closest('[data-file-action]');
+  if (!btn) return;
+  const key = btn.dataset.fileKey;
+  if (btn.dataset.fileAction === 'open') openStoredFile(key);
+  if (btn.dataset.fileAction === 'download') downloadStoredFile(key);
+  if (btn.dataset.fileAction === 'delete') await deleteStoredFile(key);
+});
 
 $('clearFiles').addEventListener('click', async () => {
   await dbClearProjectFiles();

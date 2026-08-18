@@ -30,3 +30,10 @@ button{cursor:pointer}
 .toast{position:fixed;right:24px;bottom:24px;background:#1f3329;color:#fff;padding:12px 15px;border-radius:10px;font-size:11px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.15);z-index:50;animation:toastIn .2s ease}.toast.error{background:#833939}@keyframes toastIn{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
 @media(max-width:900px){.sidebar{position:static;width:100%;height:auto}.app-shell{display:block}.steps{display:grid;grid-template-columns:repeat(3,1fr)}.storage-box{display:none}.content{margin-left:0;width:100%;padding:24px}.form-grid,.upload-grid{grid-template-columns:1fr}.summary-cards{grid-template-columns:repeat(2,1fr)}.topbar{display:block}.project-pill{display:inline-block;margin-top:14px}.step small{display:none}}
 @media(max-width:560px){.content{padding:16px}.panel{padding:18px}.steps{gap:4px}.step{padding:9px 7px}.step-number{width:27px;height:27px}.topbar h1{font-size:24px}.panel-header,.panel-actions,.analysis-toolbar{flex-direction:column;align-items:stretch}.summary-cards{grid-template-columns:1fr 1fr}}
+
+
+.stored-file-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.file-action-btn{flex:1;min-width:72px;border:1px solid var(--border);background:#fff;color:#425149;border-radius:8px;padding:8px 10px;font-size:10px;font-weight:700;cursor:pointer}
+.file-action-btn:hover{background:#f5f8f6;border-color:#b9cbc2}
+.file-action-btn.danger{color:var(--danger);background:#fffafa}
+.file-action-btn.danger:hover{background:var(--danger-bg);border-color:#e7bcbc}

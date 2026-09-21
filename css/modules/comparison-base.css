@@ -1,0 +1,639 @@
+/* ============================================================
+   Proposed Guide only inside Management Poundage section
+   ============================================================ */
+
+.management-readonly-submission-table thead th:first-child{
+  width:52%;
+}
+
+.management-readonly-submission-table thead th:last-child{
+  width:48%;
+}
+
+.management-poundage-guide-header td{
+  padding-top:4px !important;
+  padding-bottom:4px !important;
+  background:#fbfdfc;
+}
+
+.management-poundage-value-guide-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 155px;
+  gap:7px;
+  align-items:center;
+}
+
+.management-poundage-value-guide-head span{
+  color:#7a8b82;
+  font-size:7px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+.management-poundage-value-guide-head span:last-child{
+  text-align:center;
+}
+
+.management-poundage-value-guide{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 155px;
+  gap:7px;
+  align-items:center;
+}
+
+.management-poundage-value-guide .management-readonly-value{
+  min-width:0;
+}
+
+.management-guide-pill{
+  min-height:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 7px;
+  border:1px solid #d6e5dd;
+  border-radius:8px;
+  background:#eef6f2;
+  color:#37604b;
+  font-size:8px;
+  font-weight:700;
+  line-height:1.25;
+  text-align:center;
+}
+
+.management-guide-empty{
+  min-height:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #e3e9e6;
+  border-radius:8px;
+  background:#fafcfb;
+  color:#a0aca6;
+  font-size:9px;
+}
+
+@media(max-width:760px){
+  .management-readonly-submission-table{
+    min-width:680px;
+  }
+
+  .management-poundage-value-guide-head,
+  .management-poundage-value-guide{
+    grid-template-columns:minmax(0,1fr) 140px;
+  }
+}
+
+/* ============================================================
+   correct Poundage Proposed Guide key mapping
+   ============================================================ */
+.management-poundage-value-guide .management-guide-pill{
+  font-weight:800;
+  color:#24553d;
+}
+
+/* ============================================================
+   building-type-specific Poundage guides
+   ============================================================ */
+.management-poundage-type-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 7px;
+  border:1px solid #d9e6df;
+  border-radius:999px;
+  background:#f3f8f5;
+  color:#426252;
+  font-size:7px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+/* ============================================================
+   Poundage guide inside Management Comparison item column
+   ============================================================ */
+
+.management-comparison-item{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.management-comparison-item span{
+  font-weight:600;
+}
+
+.management-comparison-item small{
+  display:block;
+  color:#6f8278;
+  font-size:11px;
+  line-height:1.35;
+  font-weight:600;
+}
+
+/* ============================================================
+   Poundage guide as small text under item label
+   ============================================================ */
+.comparison-poundage-item{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:2px;
+  min-width:0;
+}
+
+.comparison-poundage-label{
+  display:block;
+  min-width:0;
+}
+
+.comparison-poundage-guide-text{
+  display:block;
+  color:#7c8d84;
+  font-size:6.5px;
+  font-weight:600;
+  line-height:1.25;
+  white-space:normal;
+}
+
+/* ============================================================
+   slightly larger comparison information text
+   ============================================================ */
+
+/* Project headings on the right */
+.management-comparison-table thead th:not(:first-child){
+  font-size:8.5px !important;
+}
+
+.management-comparison-table thead th:not(:first-child) strong{
+  font-size:9px !important;
+}
+
+.management-comparison-table thead th:not(:first-child) small{
+  font-size:7px !important;
+}
+
+/* Project information/value cells on the right */
+.management-comparison-table tbody td:not(:first-child){
+  font-size:8.5px !important;
+  line-height:1.35 !important;
+}
+
+.management-comparison-table tbody td:not(:first-child) strong{
+  font-size:9px !important;
+}
+
+/* Keep left Item / Guide side compact */
+.management-comparison-table tbody td:first-child{
+  font-size:7.5px !important;
+}
+
+.comparison-poundage-guide-text{
+  font-size:6.5px !important;
+}
+
+/* ============================================================
+   slightly larger left-side item / guide text
+   ============================================================ */
+.management-comparison-table tbody td:first-child{
+  font-size:8.2px !important;
+  line-height:1.35 !important;
+}
+
+.management-comparison-table tbody td:first-child .comparison-poundage-label,
+.management-comparison-table tbody td:first-child span{
+  font-size:8.2px !important;
+}
+
+.management-comparison-table tbody td:first-child .comparison-poundage-guide-text{
+  font-size:7px !important;
+  line-height:1.3 !important;
+}
+
+/* ============================================================
+   Search Project directly inside Comparison columns
+   ============================================================ */
+.comparison-project-search{
+  position:relative;
+}
+
+.comparison-project-search-icon{
+  position:absolute;
+  left:8px;
+  top:50%;
+  z-index:2;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:#75887e;
+  font-size:11px;
+  font-weight:800;
+}
+
+.comparison-project-search-input{
+  width:100%;
+  min-height:30px;
+  padding:5px 7px 5px 25px !important;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+  color:var(--text);
+  font-size:8px !important;
+  outline:none;
+}
+
+.comparison-project-search-input:focus{
+  border-color:#8caf9d;
+  box-shadow:0 0 0 2px rgba(23,107,77,.08);
+}
+
+.comparison-project-search-results{
+  position:absolute;
+  z-index:120;
+  top:calc(100% + 4px);
+  left:0;
+  right:0;
+  max-height:235px;
+  overflow:auto;
+  padding:4px;
+  border:1px solid #d6e3dc;
+  border-radius:9px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(28,56,43,.15);
+}
+
+.comparison-project-search-result{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+  padding:7px;
+  border:none;
+  border-radius:7px;
+  background:#fff;
+  text-align:left;
+}
+
+.comparison-project-search-result:hover{
+  background:#edf6f1;
+}
+
+.comparison-project-search-result>span:first-child{
+  min-width:0;
+}
+
+.comparison-project-search-result strong,
+.comparison-project-search-result small{
+  display:block;
+}
+
+.comparison-project-search-result strong{
+  overflow:hidden;
+  color:#315642;
+  font-size:8px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.comparison-project-search-result small{
+  margin-top:2px;
+  overflow:hidden;
+  color:#809188;
+  font-size:6.5px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.comparison-project-confirm-action{
+  flex:0 0 auto;
+  color:#176b4d;
+  font-size:6.5px;
+  font-weight:800;
+}
+
+.comparison-project-search-empty{
+  padding:9px;
+  color:#84948c;
+  font-size:7px;
+  text-align:center;
+}
+
+.comparison-project-confirmed{
+  min-height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
+  padding:5px 6px;
+  border:1px solid #cfe1d8;
+  border-radius:8px;
+  background:#f2f8f5;
+}
+
+.comparison-project-confirmed-copy{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-width:0;
+}
+
+.comparison-project-check{
+  width:18px;
+  height:18px;
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#dceee4;
+  color:#176b4d;
+  font-size:8px;
+  font-weight:900;
+}
+
+.comparison-project-confirmed-copy>span:last-child{
+  min-width:0;
+}
+
+.comparison-project-confirmed strong,
+.comparison-project-confirmed small{
+  display:block;
+}
+
+.comparison-project-confirmed strong{
+  overflow:hidden;
+  color:#315642;
+  font-size:8px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.comparison-project-confirmed small{
+  margin-top:1px;
+  overflow:hidden;
+  color:#819088;
+  font-size:6.3px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.comparison-project-change-btn{
+  flex:0 0 auto;
+  padding:4px 5px;
+  border:1px solid #d2dfd8;
+  border-radius:6px;
+  background:#fff;
+  color:#61776b;
+  font-size:6.5px;
+  font-weight:700;
+}
+
+.comparison-project-change-btn:hover{
+  border-color:#9db9aa;
+  color:#176b4d;
+}
+
+/* ============================================================
+   Management Comparison auto-fill filters
+   ============================================================ */
+
+.management-comparison-filters{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(260px,.85fr);
+  gap:10px;
+  margin:10px 0 12px;
+}
+
+.comparison-filter-block{
+  min-width:0;
+  padding:10px;
+  border:1px solid #dce7e1;
+  border-radius:10px;
+  background:#fbfdfc;
+}
+
+.comparison-filter-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+.comparison-filter-title-row>div:first-child{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.comparison-filter-title-row strong{
+  color:#345845;
+  font-size:9px;
+}
+
+.comparison-filter-number{
+  width:18px;
+  height:18px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e2f0e9;
+  color:#176b4d;
+  font-size:7px;
+  font-weight:900;
+}
+
+.comparison-type-toggle{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:3px;
+  border:1px solid #dce7e1;
+  border-radius:8px;
+  background:#fff;
+}
+
+.comparison-type-toggle button,
+.comparison-category-options button{
+  border:none;
+  border-radius:6px;
+  background:transparent;
+  color:#6f8178;
+  font-size:7px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.comparison-type-toggle button{
+  padding:5px 7px;
+}
+
+.comparison-type-toggle button.active,
+.comparison-category-options button.active{
+  background:#dfeee6;
+  color:#176b4d;
+}
+
+.comparison-filter-projects{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.comparison-filter-checkbox{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-height:29px;
+  padding:5px 7px;
+  border:1px solid #dde8e2;
+  border-radius:7px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.comparison-filter-checkbox input{
+  width:13px;
+  height:13px;
+  margin:0;
+  accent-color:#176b4d;
+}
+
+.comparison-filter-checkbox span{
+  color:#425f50;
+  font-size:7px;
+  font-weight:700;
+  line-height:1.15;
+}
+
+.comparison-filter-checkbox small{
+  display:block;
+  margin-top:1px;
+  color:#83928a;
+  font-size:6px;
+  font-weight:600;
+}
+
+.comparison-filter-checkbox-all{
+  background:#eef6f2;
+  border-color:#cfe1d8;
+}
+
+.comparison-filter-empty{
+  padding:7px;
+  color:#87978f;
+  font-size:7px;
+}
+
+.comparison-category-filter{
+  align-self:start;
+}
+
+.comparison-category-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+}
+
+.comparison-category-options button{
+  padding:6px 8px;
+  border:1px solid #dde8e2;
+  background:#fff;
+}
+
+.comparison-category-options button.active{
+  border-color:#bfd7ca;
+}
+
+@media(max-width:950px){
+  .management-comparison-filters{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ============================================================
+   fully interactive Management Comparison filters
+   ============================================================ */
+.management-comparison-filters{
+  position:relative;
+  z-index:30;
+  pointer-events:auto !important;
+}
+
+.management-comparison-filters *{
+  pointer-events:auto;
+}
+
+.comparison-type-toggle button,
+.comparison-category-options button,
+.comparison-filter-checkbox,
+.comparison-filter-checkbox input{
+  cursor:pointer !important;
+}
+
+.comparison-type-toggle button:active,
+.comparison-category-options button:active{
+  transform:translateY(1px);
+}
+
+.comparison-filter-checkbox:has(input:checked){
+  border-color:#b8d4c5;
+  background:#eef6f2;
+}
+
+.comparison-filter-checkbox:has(input:checked) span{
+  color:#245c42;
+}
+
+/* ============================================================
+   Comparison filter toggle + Management landing fix
+   ============================================================ */
+
+.management-filter-toggle-btn{
+  min-height:28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:5px 9px;
+  border:1px solid #d5e2db;
+  border-radius:8px;
+  background:#fff;
+  color:#587065;
+  font-size:8px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.management-filter-toggle-btn:hover,
+.management-filter-toggle-btn.active{
+  border-color:#a8c5b5;
+  background:#eef6f2;
+  color:#176b4d;
+}
+
+.management-filter-toggle-btn span{
+  font-size:7px;
+  line-height:1;
+}
+
+.management-comparison-filters{
+  margin:8px 12px 4px;
+  padding:0;
+  animation:comparisonFilterOpen .14s ease-out;
+}
+
+@keyframes comparisonFilterOpen{
+  from{
+    opacity:0;
+    transform:translateY(-4px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.management-comparison-filters.hidden{
+  display:none !important;
+}

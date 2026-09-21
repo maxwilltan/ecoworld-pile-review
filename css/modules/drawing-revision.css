@@ -1,0 +1,41 @@
+/* drawing-only revision selector inside drawing popups */
+.drawing-revision-selector-v147{
+  display:grid;
+  grid-template-columns:130px minmax(0,1fr);
+  align-items:center;
+  gap:12px;
+  padding:10px 16px;
+  border-bottom:1px solid #dbe7e0;
+  background:#f7faf8;
+}
+
+.drawing-revision-selector-v147 label{
+  color:#40584c;
+  font-size:10px;
+  font-weight:800;
+}
+
+.drawing-revision-selector-v147 select{
+  width:100%;
+  min-height:34px;
+  padding:7px 32px 7px 10px !important;
+  border:1px solid #cfddd5;
+  border-radius:9px !important;
+  background-color:#fff;
+  color:#29483a;
+  font-size:10px !important;
+  font-weight:700;
+}
+
+.drawing-revision-selector-v147 select:focus{
+  outline:none;
+  border-color:#78a58f;
+  box-shadow:0 0 0 3px rgba(23,107,77,.08);
+}
+
+@media(max-width:600px){
+  .drawing-revision-selector-v147{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+}

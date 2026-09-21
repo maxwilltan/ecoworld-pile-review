@@ -1,0 +1,1239 @@
+/* integrated management Edit workspace. */
+#managementSettingsModal .edit-modal-subtitle-v31{margin:6px 0 0;color:#687b71;font-size:12px;}
+.edit-consultant-card-v31{padding:16px 18px;margin-bottom:14px;background:#fff;border:1px solid #cddfd5;border-radius:13px;}
+.edit-consultant-top-v31{display:flex;align-items:flex-end;gap:12px;}
+.edit-consultant-top-v31 .field-group{flex:1;max-width:420px;min-width:180px;}
+.edit-consultant-top-v31 select{width:100%;min-height:40px;}
+.edit-consultant-top-v31>.small-btn{min-height:40px;}
+.edit-account-state-v31{align-self:center;margin:15px 0 0 auto;font-size:12px;color:#176b4d;background:#edf7f1;border-radius:20px;padding:6px 11px;white-space:nowrap;}
+.edit-account-state-v31:empty{display:none;}
+.edit-account-state-v31.is-inactive{color:#755b26;background:#fff6df;}
+.edit-consultant-card-v31 details{margin-top:14px;border-top:1px solid #e5ece7;padding-top:11px;}
+.edit-consultant-card-v31 summary,.edit-assigned-projects-v31 summary{font-size:12px;font-weight:700;color:#355b48;cursor:pointer;}
+.edit-account-fields-v31{display:grid;grid-template-columns:1fr 1.25fr 1.2fr 180px;gap:13px;padding-top:15px;}
+.edit-account-fields-v31>label{display:flex;min-width:0;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#577061;}
+.edit-account-fields-v31 .text-input{width:100%;min-width:0;min-height:39px;}
+.edit-password-v31{display:flex;gap:5px;}
+.edit-password-v31 input{flex:1;}
+.edit-password-v31 button{padding:7px 10px;}
+.edit-account-actions-v31{display:flex;flex-direction:column;align-items:flex-start;gap:10px;justify-content:flex-end;}
+#managementSettingsModal .edit-check-v31{display:flex;align-items:center;gap:8px;line-height:1.45;font-size:12px;font-weight:600;color:#28573f;cursor:pointer;}
+#managementSettingsModal .edit-check-v31 input{width:16px;height:16px;min-height:16px;flex:0 0 16px;margin:0;accent-color:#177448;}
+.edit-danger-btn-v31{padding:0;border:0;background:none;font:inherit;font-size:11px;font-weight:600;color:#a34c4c;cursor:pointer;}
+.edit-danger-btn-v31.is-armed{font-weight:800;color:#a02020;text-decoration:underline;}
+.edit-danger-btn-v31:disabled{opacity:.5;cursor:default;}
+.edit-account-note-v31{margin:12px 0 0;font-size:11px;color:#7c887f;}
+#editAccessErrorV31{margin:8px 0 0;}
+#editAccessErrorV31:empty{display:none;}
+#managementSettingsModal .management-settings-modal-selection-row{margin-bottom:7px;}
+#managementSettingsModal .filter-row-compact{display:grid;grid-template-columns:1fr 1fr 1.15fr 1fr;align-items:end;gap:12px;}
+#managementSettingsModal .filter-row-compact .field-group{min-width:0;width:auto;}
+#managementSettingsModal .management-settings-select-edit-row select{min-width:0;flex:1;}
+.edit-assignment-v31{display:flex;align-items:center;flex-wrap:wrap;gap:9px 20px;border-top:1px solid #e0e9e3;padding:13px 0 2px;margin-top:10px;}
+.edit-assignment-v31>span{font-size:11px;color:#76877b;line-height:1.5;}
+.edit-assigned-projects-v31{margin-top:11px;}
+.edit-assignment-tools-v31{display:flex;gap:8px;margin:12px 0 8px;}
+#editAssignedListV31{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;max-height:190px;overflow:auto;}
+.edit-assigned-row-v31{display:flex;align-items:center;border:1px solid #dce7df;background:#fff;border-radius:8px;padding:8px;min-width:0;}
+.edit-project-link-v31{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0;border:0;background:none;padding:0;color:#305d43;cursor:pointer;text-align:left;}
+.edit-project-link-v31 strong{font-size:11px;overflow-wrap:anywhere;}
+.edit-project-link-v31 small{font-size:10px;color:#7d8d80;overflow-wrap:anywhere;}
+.edit-project-link-v31:disabled{opacity:.55;cursor:default;}
+.edit-remove-assignment-v31{background:none;border:0;padding:0 4px;margin-left:6px;color:#84958a;font-size:20px;cursor:pointer;}
+.edit-remove-assignment-v31:hover{color:#a23737;}
+.edit-tabs-v31{display:flex;gap:7px;margin:16px 0 12px;border-bottom:1px solid #d8e5dd;}
+.edit-tabs-v31 button{border:0;border-bottom:3px solid transparent;background:none;padding:11px 13px;font:inherit;font-size:12px;font-weight:700;color:#7c8a80;cursor:pointer;}
+.edit-tabs-v31 button[aria-selected=true]{color:#17683f;border-bottom-color:#218755;}
+.edit-tabs-v31 button span{display:inline-block;padding:2px 6px;margin-left:4px;border-radius:10px;font-size:10px;background:#e9f0ec;}
+.edit-past-panel-v31{background:#fff;border:1px solid #dbe7df;border-radius:12px;overflow:hidden;}
+.edit-past-heading-v31{padding:16px 18px 0;}
+.edit-past-heading-v31 h3{margin:0 0 6px;font-size:15px;color:#244d35;}
+.edit-past-heading-v31 p{margin:0;color:#718176;font-size:12px;line-height:1.6;}
+.edit-history-notice-v31{margin:0;padding:10px 18px 14px;color:#4f705c;font-size:11px;line-height:1.5;}
+.edit-submission-row-v31{display:grid;grid-template-columns:minmax(200px,1fr) minmax(140px,210px) 145px;gap:20px;align-items:center;padding:16px 18px;border-top:1px solid #e5ece7;}
+.edit-submission-main-v31{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.edit-submission-main-v31>strong{color:#2b4b37;font-size:13px;overflow-wrap:anywhere;}
+.edit-submission-main-v31 small,.edit-submission-permission-v31 small{font-size:10px;line-height:1.5;color:#7d8b82;}
+.edit-submission-meta-v31{display:flex;flex-wrap:wrap;gap:5px;margin:2px 0;}
+.edit-submission-meta-v31 span{font-size:10px;padding:3px 6px;background:#f1f5f2;border-radius:4px;color:#63796b;}
+.edit-submission-permission-v31{display:flex;flex-direction:column;align-items:flex-start;gap:8px;}
+.edit-lock-state-v31{display:inline-block;padding:5px 9px;border-radius:20px;color:#65756b;background:#edf0ee;font-size:11px;font-weight:700;}
+.edit-lock-state-v31.is-open{color:#147345;background:#e1f4e9;}
+.edit-submission-actions-v31{display:flex;flex-direction:column;gap:7px;}
+#managementSettingsModal button:disabled{opacity:.5;cursor:default;}
+.edit-empty-v31{font-size:12px;color:#7e8d81;line-height:1.65;padding:22px 18px;margin:0;grid-column:1/-1;}
+.edit-footer-v31{flex:0 0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid #dbe7df;background:#fff;}
+.edit-footer-v31>div{display:flex;flex-direction:column;gap:5px;}
+.edit-footer-v31 strong{font-size:12px;color:#396147;}
+.edit-footer-v31 strong.is-unsaved{color:#927028;}
+.edit-footer-v31 small{font-size:10px;line-height:1.5;color:#88958b;}
+.edit-footer-v31 button{white-space:nowrap;}
+.edit-close-prompt-v31{padding:14px 18px;background:#fff8e7;border-top:1px solid #eddfbb;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.edit-close-prompt-v31>strong{font-size:12px;color:#7d602e;}
+.edit-close-prompt-v31>div{display:flex;flex-wrap:wrap;gap:7px;}
+@media(max-width:1000px){
+  .edit-account-fields-v31{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #managementSettingsModal .filter-row-compact{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #editAssignedListV31{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:650px){
+  .edit-consultant-top-v31{flex-wrap:wrap;align-items:center;gap:10px;}
+  .edit-consultant-top-v31 .field-group{flex-basis:100%;max-width:none;}
+  .edit-account-state-v31{margin:0 0 0 auto;}
+  .edit-account-fields-v31{grid-template-columns:1fr;}
+  #managementSettingsModal .filter-row-compact{grid-template-columns:1fr;}
+  #editAssignedListV31{grid-template-columns:1fr;}
+  .edit-submission-row-v31{grid-template-columns:1fr;gap:12px;}
+  .edit-submission-actions-v31{flex-direction:row;flex-wrap:wrap;}
+  .edit-footer-v31,.edit-close-prompt-v31{align-items:stretch;flex-direction:column;gap:10px;padding:12px;}
+  .edit-tabs-v31 button{padding:10px 8px;font-size:11px;}
+}
+
+/* Account details and Assigned projects sit beside each other. */
+.edit-consultant-detail-grid-v32{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(280px,1fr);
+  gap:14px;
+  align-items:start;
+  margin-top:14px;
+}
+.edit-consultant-card-v31 .edit-consultant-detail-grid-v32>details{
+  margin-top:0;
+  min-width:0;
+  border-top:1px solid #e5ece7;
+  padding-top:11px;
+}
+.edit-consultant-detail-grid-v32 .edit-account-fields-v31{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.edit-consultant-detail-grid-v32 .edit-account-actions-v31{
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  grid-column:1/-1;
+}
+.edit-consultant-detail-grid-v32 #editAssignedListV31{
+  grid-template-columns:1fr;
+  max-height:215px;
+}
+.edit-consultant-detail-grid-v32 .edit-assignment-tools-v31{
+  flex-wrap:wrap;
+}
+@media(max-width:1000px){
+  .edit-consultant-detail-grid-v32{grid-template-columns:1fr;}
+  .edit-consultant-detail-grid-v32 #editAssignedListV31{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:650px){
+  .edit-consultant-detail-grid-v32 .edit-account-fields-v31{grid-template-columns:1fr;}
+  .edit-consultant-detail-grid-v32 .edit-account-actions-v31{grid-column:auto;flex-direction:column;align-items:flex-start;}
+  .edit-consultant-detail-grid-v32 #editAssignedListV31{grid-template-columns:1fr;}
+}
+
+/* Account details and Assigned projects share one dropdown. */
+.edit-consultant-combined-v33{
+  margin-top:14px;
+  border-top:1px solid #e5ece7;
+  padding-top:11px;
+}
+.edit-consultant-combined-summary-v33{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(280px,1fr);
+  gap:14px;
+  align-items:center;
+  cursor:pointer;
+}
+.edit-consultant-combined-summary-v33>span{
+  min-width:0;
+  font-weight:700;
+}
+.edit-consultant-combined-summary-v33>span:last-child{
+  color:#60756a;
+}
+.edit-consultant-detail-grid-v33{
+  margin-top:12px;
+}
+.edit-consultant-card-v31 .edit-consultant-combined-v33>.edit-consultant-detail-grid-v33>section{
+  min-width:0;
+}
+.edit-account-panel-v33,
+.edit-assigned-panel-v33{
+  padding-top:0;
+}
+.edit-assigned-panel-v33{
+  border-left:1px solid #e5ece7;
+  padding-left:14px;
+}
+@media(max-width:1000px){
+  .edit-consultant-combined-summary-v33{grid-template-columns:1fr;gap:4px;}
+  .edit-assigned-panel-v33{border-left:0;padding-left:0;border-top:1px solid #e5ece7;padding-top:12px;}
+}
+
+/* Details dropdown with 3 sections: account, assignments, past submissions */
+.edit-consultant-combined-summary-v34{
+  display:block;
+}
+.edit-consultant-combined-summary-v34>span{
+  display:inline-block;
+  font-weight:700;
+}
+.edit-consultant-detail-grid-v34{
+  grid-template-columns:minmax(0,1.35fr) minmax(260px,1fr) minmax(280px,1.05fr);
+  gap:16px;
+}
+.edit-detail-panel-v34{
+  min-width:0;
+}
+.edit-section-head-v34{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:0 0 12px;
+}
+.edit-section-head-v34 h3,
+.edit-past-heading-inline-v34 h3{
+  margin:0;
+  font-size:13px;
+  color:#264b38;
+}
+.edit-past-heading-inline-v34 h3 span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  padding:2px 7px;
+  margin-left:6px;
+  border-radius:999px;
+  background:#eef3ef;
+  color:#60756a;
+  font-size:10px;
+  font-weight:700;
+}
+.edit-consultant-detail-grid-v34 .edit-account-fields-v31{
+  grid-template-columns:1fr;
+  gap:11px;
+  padding-top:0;
+}
+.edit-consultant-detail-grid-v34 .edit-account-actions-v31{
+  grid-column:auto;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-end;
+}
+.edit-assigned-panel-v33.edit-detail-panel-v34,
+.edit-past-panel-inline-v34{
+  border-left:1px solid #e5ece7;
+  padding-left:16px;
+}
+.edit-assigned-panel-v33.edit-detail-panel-v34{
+  margin-top:0;
+}
+.edit-consultant-detail-grid-v34 #editAssignedListV31{
+  grid-template-columns:1fr;
+  max-height:250px;
+}
+.edit-past-panel-inline-v34{
+  background:transparent;
+  border-radius:0;
+  border-top:0;
+  overflow:visible;
+}
+.edit-past-heading-inline-v34{
+  padding:0;
+}
+.edit-past-panel-inline-v34 .edit-history-notice-v31{
+  padding:0 0 10px;
+  margin:0;
+}
+.edit-past-panel-inline-v34 #editPastListV31{
+  max-height:250px;
+  overflow:auto;
+  padding-right:2px;
+}
+.edit-past-panel-inline-v34 .edit-submission-row-v31{
+  grid-template-columns:1fr;
+  gap:10px;
+  padding:12px 0;
+}
+.edit-past-panel-inline-v34 .edit-submission-row-v31:first-child{
+  border-top:1px solid #e5ece7;
+}
+.edit-past-panel-inline-v34 .edit-submission-actions-v31{
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+.edit-past-panel-inline-v34 .edit-empty-v31{
+  padding:8px 0 0;
+}
+@media(max-width:1200px){
+  .edit-consultant-detail-grid-v34{
+    grid-template-columns:1fr;
+  }
+  .edit-assigned-panel-v33.edit-detail-panel-v34,
+  .edit-past-panel-inline-v34{
+    border-left:0;
+    padding-left:0;
+    border-top:1px solid #e5ece7;
+    padding-top:14px;
+  }
+}
+@media(max-width:650px){
+  .edit-consultant-detail-grid-v34 .edit-account-actions-v31{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+/* cleaner, uniform Details 3-column separators */
+.edit-consultant-detail-grid-v34{
+  align-items:stretch !important;
+  gap:0 !important;
+}
+.edit-consultant-detail-grid-v34>.edit-detail-panel-v34{
+  align-self:stretch !important;
+  margin:0 !important;
+  padding:0 18px !important;
+  border:0 !important;
+  box-sizing:border-box !important;
+}
+.edit-consultant-detail-grid-v34>.edit-detail-panel-v34:first-child{
+  padding-left:0 !important;
+}
+.edit-consultant-detail-grid-v34>.edit-detail-panel-v34:last-child{
+  padding-right:0 !important;
+}
+.edit-consultant-detail-grid-v34>.edit-detail-panel-v34+ .edit-detail-panel-v34{
+  border-left:1px solid #dfe8e2 !important;
+}
+.edit-consultant-detail-grid-v34 .edit-section-head-v34,
+.edit-consultant-detail-grid-v34 .edit-past-heading-inline-v34{
+  min-height:30px !important;
+  margin:0 0 12px !important;
+  display:flex !important;
+  align-items:center !important;
+}
+.edit-consultant-detail-grid-v34 .edit-assignment-tools-v31{
+  margin-top:0 !important;
+}
+.edit-past-panel-inline-v34 .edit-submission-row-v31:first-child{
+  border-top:0 !important;
+}
+@media(max-width:1200px){
+  .edit-consultant-detail-grid-v34{
+    gap:0 !important;
+  }
+  .edit-consultant-detail-grid-v34>.edit-detail-panel-v34{
+    padding:14px 0 !important;
+    border-left:0 !important;
+  }
+  .edit-consultant-detail-grid-v34>.edit-detail-panel-v34:first-child{
+    padding-top:0 !important;
+  }
+  .edit-consultant-detail-grid-v34>.edit-detail-panel-v34+ .edit-detail-panel-v34{
+    border-left:0 !important;
+    border-top:1px solid #dfe8e2 !important;
+  }
+}
+
+/* clearer hierarchy for consultant selector and Details dropdown */
+#managementSettingsModal label[for="editConsultantSelectV31"]{
+  font-size:13.5px !important;
+  font-weight:800 !important;
+  color:#254d38 !important;
+}
+
+#managementSettingsModal .edit-consultant-combined-summary-v34{
+  position:relative;
+  display:flex !important;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  color:#1f4330 !important;
+  font-size:13.5px !important;
+  font-weight:800 !important;
+  list-style:none;
+}
+#managementSettingsModal .edit-consultant-combined-summary-v34::-webkit-details-marker{
+  display:none;
+}
+#managementSettingsModal .edit-consultant-combined-summary-v34::after{
+  content:"⌄";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  color:#355b48;
+  font-size:17px;
+  font-weight:800;
+  line-height:1;
+  transform:translateY(-1px);
+  transition:transform .18s ease;
+}
+#managementSettingsModal .edit-consultant-combined-v34[open]>.edit-consultant-combined-summary-v34::after{
+  transform:rotate(180deg) translateY(1px);
+}
+
+#managementSettingsModal .edit-section-head-v34 h3,
+#managementSettingsModal .edit-past-heading-inline-v34 h3,
+#managementSettingsModal #editAssignedCountV31{
+  color:#6f8176 !important;
+  font-size:12px !important;
+  font-weight:600 !important;
+  letter-spacing:.01em;
+}
+
+#managementSettingsModal .edit-past-heading-inline-v34 h3 span{
+  color:#7f9085 !important;
+  font-weight:600 !important;
+}
+
+/* move Details dropdown arrow to the left, right-triangle closed / down-triangle open */
+#managementSettingsModal .edit-consultant-combined-summary-v34{
+  justify-content:flex-start !important;
+  gap:8px !important;
+}
+
+#managementSettingsModal .edit-consultant-combined-summary-v34::after{
+  content:none !important;
+  display:none !important;
+}
+
+#managementSettingsModal .edit-consultant-combined-summary-v34::before{
+  content:"▸";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:14px;
+  height:14px;
+  flex:0 0 14px;
+  color:#355b48;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+  transform:translateY(-.5px);
+}
+
+#managementSettingsModal .edit-consultant-combined-v34[open]>.edit-consultant-combined-summary-v34::before{
+  content:"▾";
+}
+
+/* spreadsheet-style Assigned Project / Past Submission lists */
+#managementSettingsModal .edit-list-table-v38{
+  width:100%;
+  border:1px solid #d8e3dc;
+  border-radius:0;
+  overflow:hidden;
+  background:#fff;
+}
+#managementSettingsModal .edit-list-head-v38{
+  display:flex;
+  align-items:center;
+  min-height:30px;
+  padding:5px 9px;
+  background:#4aa62f;
+  color:#0e1e0e;
+  font-size:11.5px;
+  font-weight:800;
+  line-height:1.2;
+}
+#managementSettingsModal .edit-list-row-v38,
+#managementSettingsModal .edit-submission-row-v38{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  align-items:center !important;
+  gap:8px !important;
+  min-height:48px;
+  padding:7px 9px !important;
+  border-top:1px solid #e1e9e4 !important;
+  background:#fff;
+}
+#managementSettingsModal .edit-list-main-v38{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:3px !important;
+  min-width:0;
+  text-align:left;
+}
+#managementSettingsModal .edit-list-main-v38 strong{
+  font-size:12px !important;
+  font-weight:500 !important;
+  color:#214d36 !important;
+  line-height:1.25 !important;
+}
+#managementSettingsModal .edit-list-main-v38 small{
+  font-size:10.5px !important;
+  font-weight:400 !important;
+  color:#789083 !important;
+  line-height:1.25 !important;
+}
+#managementSettingsModal .edit-list-action-v38{
+  align-self:center;
+}
+#managementSettingsModal .edit-submission-line-v38{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:1px;
+  font-size:10.5px;
+  color:#678071;
+}
+#managementSettingsModal .edit-submission-line-v38 span+span::before{
+  content:"·";
+  margin-right:5px;
+  color:#9aaa9f;
+}
+#managementSettingsModal .edit-submission-actions-v38{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:7px !important;
+}
+#managementSettingsModal .edit-text-action-v38,
+#managementSettingsModal .edit-version-link-v38{
+  border:0;
+  background:none;
+  padding:2px 0;
+  font:inherit;
+  cursor:pointer;
+}
+#managementSettingsModal .edit-text-action-v38{
+  color:#1f5a3d;
+  font-size:10.5px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+#managementSettingsModal .edit-version-link-v38{
+  color:#84968b;
+  font-size:10px;
+  font-weight:600;
+}
+#managementSettingsModal .edit-text-action-v38:disabled{
+  opacity:.42;
+  cursor:default;
+  text-decoration:none;
+}
+#managementSettingsModal .edit-past-panel-inline-v34 #editPastListV31,
+#managementSettingsModal .edit-consultant-detail-grid-v34 #editAssignedListV31{
+  max-height:260px;
+  overflow:auto;
+  padding-right:0;
+}
+#managementSettingsModal .edit-past-panel-inline-v34 .edit-submission-row-v31:first-child{
+  border-top:1px solid #e1e9e4 !important;
+}
+
+/* combine Assigned Project and Past Submission under one Project section */
+#managementSettingsModal .edit-consultant-detail-grid-v34{
+  grid-template-columns:minmax(280px,.8fr) minmax(0,2.2fr) !important;
+  gap:0 !important;
+}
+#managementSettingsModal .edit-project-section-v39{
+  min-width:0;
+  border-left:1px solid #dfe8e2;
+  padding:0 0 0 18px !important;
+}
+#managementSettingsModal .edit-project-section-head-v39{
+  margin-bottom:10px !important;
+}
+#managementSettingsModal .edit-project-section-head-v39 h3{
+  color:#6f8176 !important;
+  font-size:12px !important;
+  font-weight:600 !important;
+  letter-spacing:.01em;
+}
+#managementSettingsModal .edit-project-columns-v39{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:stretch;
+  min-width:0;
+}
+#managementSettingsModal .edit-project-column-v39{
+  min-width:0;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  overflow:visible !important;
+}
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  border-left:1px solid #dfe8e2 !important;
+  padding-left:12px !important;
+  margin-left:12px !important;
+}
+#managementSettingsModal .edit-hidden-v39{
+  display:none !important;
+}
+#managementSettingsModal .edit-project-column-v39 #editAssignedListV31,
+#managementSettingsModal .edit-project-column-v39 #editPastListV31{
+  max-height:270px;
+  overflow:auto;
+  padding:0;
+}
+#managementSettingsModal .edit-empty-row-v39{
+  padding:13px 9px !important;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  color:#8a998f;
+  font-size:10.5px;
+  border-top:1px solid #e1e9e4;
+}
+@media(max-width:1200px){
+  #managementSettingsModal .edit-consultant-detail-grid-v34{
+    grid-template-columns:1fr !important;
+  }
+  #managementSettingsModal .edit-project-section-v39{
+    border-left:0;
+    border-top:1px solid #dfe8e2;
+    padding:14px 0 0 !important;
+  }
+}
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-columns-v39{
+    grid-template-columns:1fr;
+  }
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    border-left:0 !important;
+    border-top:1px solid #dfe8e2 !important;
+    padding-left:0 !important;
+    padding-top:12px !important;
+    margin-left:0 !important;
+    margin-top:12px !important;
+  }
+}
+
+/* smooth Project lists — remove spreadsheet/table visual treatment */
+#managementSettingsModal .edit-project-columns-v39{
+  gap:24px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  border-left:0 !important;
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-table-v38{
+  border:0 !important;
+  border-radius:0 !important;
+  overflow:visible !important;
+  background:transparent !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-head-v38{
+  min-height:auto !important;
+  padding:0 2px 9px !important;
+  background:transparent !important;
+  color:#5f7468 !important;
+  font-size:11.5px !important;
+  font-weight:650 !important;
+  line-height:1.25 !important;
+  border:0 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  min-height:0 !important;
+  padding:9px 8px !important;
+  margin:0 0 3px !important;
+  border:0 !important;
+  border-radius:8px !important;
+  background:transparent !important;
+  transition:background-color .15s ease !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38:hover{
+  background:#f5f8f6 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 strong{
+  color:#2d5741 !important;
+  font-weight:600 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 small,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-line-v38{
+  color:#819087 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-empty-row-v39,
+#managementSettingsModal .edit-project-column-v39 .edit-empty-v31{
+  border:0 !important;
+  background:transparent !important;
+  padding:9px 8px !important;
+  color:#8b9990 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 #editAssignedListV31,
+#managementSettingsModal .edit-project-column-v39 #editPastListV31{
+  padding:0 !important;
+}
+
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-columns-v39{
+    gap:18px !important;
+  }
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    border-top:1px solid #edf2ee !important;
+    padding-top:14px !important;
+    margin-top:0 !important;
+  }
+}
+
+/* stronger section hierarchy + clean divider + refined smooth project area */
+#managementSettingsModal .edit-detail-panel-v34>.edit-section-head-v34 h3,
+#managementSettingsModal .edit-project-section-head-v39 h3{
+  color:#243a30 !important;
+  font-size:13px !important;
+  font-weight:750 !important;
+  letter-spacing:0 !important;
+}
+
+#managementSettingsModal .edit-project-section-head-v39{
+  margin-bottom:12px !important;
+}
+
+#managementSettingsModal .edit-project-columns-v39{
+  gap:0 !important;
+  align-items:stretch !important;
+}
+
+#managementSettingsModal .edit-project-column-v39{
+  min-width:0 !important;
+  padding-right:22px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  border-left:1px solid #d8e4dc !important;
+  padding-left:22px !important;
+  padding-right:0 !important;
+  margin-left:0 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-head-v38{
+  padding:0 8px 10px !important;
+  color:#607369 !important;
+  font-size:11.5px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  padding:10px 10px !important;
+  margin:0 0 4px !important;
+  border-radius:10px !important;
+  background:transparent !important;
+  transition:background-color .15s ease, transform .15s ease !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38:hover{
+  background:#f3f7f4 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 strong{
+  color:#294f3a !important;
+  font-size:11.5px !important;
+  font-weight:650 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 small,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-line-v38{
+  color:#84938a !important;
+  font-size:10px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-text-action-v38{
+  color:#315f46 !important;
+  text-decoration:none !important;
+  font-weight:700 !important;
+  padding:4px 7px !important;
+  border-radius:7px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-text-action-v38:hover{
+  background:#eaf3ed !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-version-link-v38{
+  color:#819087 !important;
+  padding:4px 5px !important;
+  border-radius:6px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-version-link-v38:hover{
+  background:#f0f4f1 !important;
+  color:#607369 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 #editAssignedListV31,
+#managementSettingsModal .edit-project-column-v39 #editPastListV31{
+  scrollbar-width:thin;
+  scrollbar-color:#ccd9d1 transparent;
+}
+
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-column-v39{
+    padding-right:0 !important;
+  }
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    border-left:0 !important;
+    border-top:1px solid #d8e4dc !important;
+    padding-left:0 !important;
+    padding-top:16px !important;
+    margin-top:4px !important;
+  }
+}
+
+/* give Project area rounded panels, softer backgrounds, and card-like list items */
+#managementSettingsModal .edit-project-section-v39{
+  position:relative !important;
+  border-left:1px solid #dfe8e2 !important;
+  padding:2px 0 0 22px !important;
+}
+
+#managementSettingsModal .edit-project-columns-v39{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:18px !important;
+  align-items:stretch !important;
+}
+
+#managementSettingsModal .edit-project-columns-v39::before{
+  content:"";
+  position:absolute;
+  top:8px;
+  bottom:8px;
+  left:50%;
+  width:1px;
+  background:linear-gradient(to bottom, rgba(209,223,214,0), #d4e0d8 10%, #d4e0d8 90%, rgba(209,223,214,0));
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+
+#managementSettingsModal .edit-project-column-v39{
+  position:relative !important;
+  min-width:0 !important;
+  padding:14px 14px 12px !important;
+  border:1px solid #e2ebe5 !important;
+  border-radius:16px !important;
+  background:linear-gradient(180deg, #fbfdfc 0%, #f5f8f6 100%) !important;
+  box-shadow:0 6px 18px rgba(36,58,48,.04) !important;
+}
+
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  border-left:1px solid #e2ebe5 !important;
+  padding-left:14px !important;
+  padding-right:14px !important;
+  margin-left:0 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-head-v38{
+  padding:0 4px 12px !important;
+  color:#5e7268 !important;
+  font-size:11.5px !important;
+  font-weight:700 !important;
+  letter-spacing:.01em !important;
+  border-bottom:1px solid #e7efea !important;
+  margin-bottom:6px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 #editAssignedListV31,
+#managementSettingsModal .edit-project-column-v39 #editPastListV31{
+  max-height:300px !important;
+  overflow:auto !important;
+  padding:0 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  padding:12px 12px !important;
+  margin:0 0 10px !important;
+  border:1px solid #e3ece6 !important;
+  border-radius:14px !important;
+  background:#ffffff !important;
+  box-shadow:0 4px 14px rgba(36,58,48,.04) !important;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38:hover{
+  background:#fcfefd !important;
+  border-color:#d6e4dc !important;
+  box-shadow:0 8px 20px rgba(36,58,48,.07) !important;
+  transform:translateY(-1px) !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 strong{
+  display:block !important;
+  margin-bottom:3px !important;
+  color:#274936 !important;
+  font-size:12.5px !important;
+  font-weight:700 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 small,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-line-v38{
+  display:block !important;
+  color:#87968d !important;
+  font-size:10.5px !important;
+  line-height:1.35 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-submission-line-v38{
+  margin-top:6px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-submission-line-v38 span+span::before{
+  content:"•";
+  margin:0 6px;
+  color:#b0beb5;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-action-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-text-action-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-version-link-v38{
+  border-radius:999px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-action-v38{
+  width:28px !important;
+  height:28px !important;
+  border:1px solid #d6e1da !important;
+  background:#f6faf7 !important;
+  color:#8d9d94 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-action-v38:hover{
+  background:#eff5f1 !important;
+  color:#5a6f63 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-submission-actions-v38{
+  gap:8px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-text-action-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-version-link-v38{
+  padding:6px 12px !important;
+  border:1px solid #d9e5de !important;
+  background:#f8fbf9 !important;
+  color:#486553 !important;
+  font-weight:700 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-text-action-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-version-link-v38:hover{
+  background:#eef5f1 !important;
+  border-color:#cfe0d6 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-empty-row-v39,
+#managementSettingsModal .edit-project-column-v39 .edit-empty-v31{
+  padding:16px 14px !important;
+  border:1px dashed #d9e5de !important;
+  border-radius:12px !important;
+  background:#fbfdfc !important;
+  color:#8a998f !important;
+}
+
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-columns-v39{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  #managementSettingsModal .edit-project-columns-v39::before{
+    display:none !important;
+  }
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    margin-top:0 !important;
+  }
+}
+
+/* remove outer column boxes; style inner cards; compact inline submission metadata */
+#managementSettingsModal .edit-project-column-v39{
+  padding:0 22px 0 0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  padding:0 0 0 22px !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-head-v38{
+  padding:0 4px 10px !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  border:1px solid #dbe7df !important;
+  border-radius:14px !important;
+  background:linear-gradient(180deg,#fbfdfc 0%,#f5f8f6 100%) !important;
+  box-shadow:0 5px 14px rgba(36,58,48,.045) !important;
+  padding:12px 13px !important;
+  margin:0 0 9px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38:hover{
+  background:linear-gradient(180deg,#ffffff 0%,#f7faf8 100%) !important;
+  border-color:#cfded5 !important;
+  box-shadow:0 8px 18px rgba(36,58,48,.075) !important;
+}
+
+#managementSettingsModal .edit-submission-meta-inline-v43{
+  display:flex !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+  gap:0 !important;
+  margin-top:2px !important;
+  color:#829188 !important;
+}
+
+#managementSettingsModal .edit-submission-meta-inline-v43 small,
+#managementSettingsModal .edit-submission-meta-inline-v43 span{
+  display:inline !important;
+  margin:0 !important;
+  color:#829188 !important;
+  font-size:10.5px !important;
+  line-height:1.35 !important;
+  font-weight:500 !important;
+}
+
+#managementSettingsModal .edit-submission-meta-inline-v43 span::before{
+  content:"·";
+  margin:0 6px;
+  color:#b0bbb4;
+}
+
+#managementSettingsModal .edit-submission-line-v38,
+#managementSettingsModal .edit-version-link-v38{
+  display:none !important;
+}
+
+#managementSettingsModal .edit-submission-actions-v38{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:7px !important;
+  min-height:30px !important;
+  padding:6px 10px !important;
+  border-radius:999px !important;
+  border:1px solid #d7e2db !important;
+  background:#ffffff !important;
+  color:#52695b !important;
+  font:inherit !important;
+  font-size:10.5px !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  white-space:nowrap !important;
+  transition:background-color .15s ease,border-color .15s ease,color .15s ease,box-shadow .15s ease !important;
+}
+
+#managementSettingsModal .edit-permission-dot-v43{
+  width:7px !important;
+  height:7px !important;
+  flex:0 0 7px !important;
+  border-radius:50% !important;
+  background:#829188 !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43.is-locked:hover{
+  background:#f2f7f4 !important;
+  border-color:#c8dbcf !important;
+  color:#315a43 !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43.is-open{
+  background:#edf7f1 !important;
+  border-color:#c8e2d2 !important;
+  color:#22633f !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43.is-open .edit-permission-dot-v43{
+  background:#2d8b59 !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43.is-open:hover{
+  background:#e5f2ea !important;
+  border-color:#b9d8c4 !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43:disabled{
+  opacity:.45 !important;
+  cursor:default !important;
+  box-shadow:none !important;
+}
+
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-column-v39,
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+/* match center divider to Project section divider and compact project cards */
+#managementSettingsModal .edit-project-columns-v39::before{
+  display:none !important;
+}
+
+#managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+  border-left:1px solid #dfe8e2 !important;
+  padding-left:22px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  padding:8px 10px !important;
+  margin-bottom:6px !important;
+  border-radius:12px !important;
+  box-shadow:0 3px 10px rgba(36,58,48,.04) !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38{
+  gap:2px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 strong{
+  margin-bottom:1px !important;
+  font-size:12px !important;
+  line-height:1.25 !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-main-v38 small,
+#managementSettingsModal .edit-submission-meta-inline-v43 small,
+#managementSettingsModal .edit-submission-meta-inline-v43 span{
+  font-size:10px !important;
+  line-height:1.25 !important;
+}
+
+#managementSettingsModal .edit-submission-meta-inline-v43{
+  margin-top:1px !important;
+}
+
+#managementSettingsModal .edit-permission-action-v43{
+  min-height:26px !important;
+  padding:4px 8px !important;
+  font-size:10px !important;
+  gap:6px !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-action-v38{
+  width:25px !important;
+  height:25px !important;
+}
+
+@media(max-width:760px){
+  #managementSettingsModal .edit-project-column-v39+ .edit-project-column-v39{
+    border-left:0 !important;
+    border-top:1px solid #dfe8e2 !important;
+    padding-left:0 !important;
+  }
+}
+
+/* Active account left, Delete consultant right */
+#managementSettingsModal .edit-consultant-detail-grid-v34 .edit-account-actions-v31{
+  width:100% !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+}
+
+#managementSettingsModal .edit-consultant-detail-grid-v34 .edit-account-actions-v31 .edit-danger-btn-v31{
+  margin-left:auto !important;
+  text-align:right !important;
+}
+
+@media(max-width:650px){
+  #managementSettingsModal .edit-consultant-detail-grid-v34 .edit-account-actions-v31{
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+  }
+}
+
+/* project/submission content is display-only; only remove and permission controls are clickable */
+#managementSettingsModal .edit-static-project-v46,
+#managementSettingsModal .edit-submission-main-v31{
+  cursor:default !important;
+  user-select:text;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38{
+  cursor:default !important;
+}
+
+#managementSettingsModal .edit-project-column-v39 .edit-list-row-v38:hover,
+#managementSettingsModal .edit-project-column-v39 .edit-submission-row-v38:hover{
+  transform:none !important;
+}
+
+/* make Account details & password and Project exactly the same heading size */
+#managementSettingsModal .edit-account-panel-v33 > .edit-section-head-v34 h3,
+#managementSettingsModal .edit-project-section-v39 > .edit-project-section-head-v39 h3{
+  font-size:13px !important;
+  line-height:1.25 !important;
+  font-weight:750 !important;
+  color:#243a30 !important;
+  letter-spacing:0 !important;
+  margin:0 !important;
+}
+
+/* V47 UI hierarchy refinement: stronger project-selection labels, quieter assignment option. */
+#managementSettingsModal .filter-row-compact .field-group > label{
+  font-size:16px !important;
+  font-weight:800 !important;
+  line-height:1.2 !important;
+  color:#243a30 !important;
+  margin-bottom:2px !important;
+}
+
+#managementSettingsModal #managementSettingsSelectionPill{
+  font-size:14px !important;
+  font-weight:750 !important;
+  line-height:1.25 !important;
+  padding:8px 12px !important;
+  color:#294f3a !important;
+}
+
+#managementSettingsModal .edit-assignment-v31 .edit-check-v31,
+#managementSettingsModal #editAssignProjectLabelV31{
+  font-size:10px !important;
+  font-weight:600 !important;
+  line-height:1.35 !important;
+}
+
+/* V47 refinement: slightly reduce the project-selection hierarchy sizing. */
+#managementSettingsModal .filter-row-compact .field-group > label{
+  font-size:15px !important;
+}
+
+#managementSettingsModal #managementSettingsSelectionPill{
+  font-size:13px !important;
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   remove non-essential descriptive/helper copy
+   Preserve operational labels, values, units, validation, metadata and warnings.
+   ============================================================ */
+
+/* Login / shell: remove duplicate decorative captions. */
+.login-card > .eyebrow,
+.sidebar-brand-copy > small{
+  display:none !important;
+}
+
+/* Consultant submission: one concise lock message is enough. */
+#submissionLockNotice small,
+#overviewView #saveStatus{
+  display:none !important;
+}
+
+/* Submission Setup: remove changing helper/status sentence. */
+#managementSettingsStatus{
+  display:none !important;
+}
+
+/* Generic duplicated modal eyebrows are redundant when an H2 is present. */
+.modal-eyebrow{
+  display:none !important;
+}
+
+/* Pile Reference: title + table are self-explanatory. */
+#managementPileReferenceModalV124 .page-subtext,
+#managementPileReferenceModalV124 .management-reference-note{
+  display:none !important;
+}
+
+/* Internal Pile Check: keep figures and controls, remove explanatory prose. */
+#managementPileCheckModal .management-pile-summary small,
+#managementPileCheckModal .management-pile-toolbar small,
+#managementPileCheckModal .management-modal-footer > small,
+.management-pile-check-chooser-head-v136 small{
+  display:none !important;
+}
+
+/* Drawing folders: filename/revision rows already explain the contents. */
+#drawingFolderModalMeta,
+#managementDrawingFolderModalMeta,
+.drawing-folder-modal-footer > span{
+  display:none !important;
+}
+
+/* Poundage calculator: labels + calculated result are sufficient. */
+#poundageCalculatorModal .poundage-result-panel > small,
+#poundageCalculatorModal .poundage-calculator-footer > small{
+  display:none !important;
+}
+
+/* Loading & Capacity: retain useful Excel import instructions only. */
+#loadingCapacityModal .loading-modal-head p,
+#loadingCapacityModal .loading-toolbar-copy small,
+#loadingCapacityModal .loading-modal-footer > small{
+  display:none !important;
+}
+
+/* Consultant access: controls are clear without intro/outro sentences. */
+#consultantAccessModal .consultant-access-head-v139 p,
+#consultantAccessModal .consultant-access-footer-v139 > small{
+  display:none !important;
+}
+
+/* Comparison/filter popovers: remove instructions, keep project/BU metadata and counts. */
+.comparison-filter-project-panel > .comparison-filter-panel-title small,
+.comparison-filter-category-panel > .comparison-filter-panel-title small,
+.comparison-filter-sections-panel > .comparison-filter-panel-title small,
+.management-revision-popover-head-v118 small{
+  display:none !important;
+}
+
+/* Tighten spacing left behind by removed helper copy. */
+#managementPileReferenceModalV124 .pile-reference-modal-toolbar-v124,
+#consultantAccessModal .consultant-access-head-v139,
+#loadingCapacityModal .loading-modal-head,
+#poundageCalculatorModal .poundage-calculator-head{
+  gap:6px !important;
+}
+
+#managementPileCheckModal .management-pile-toolbar{
+  align-items:center !important;
+}
+
+#managementPileCheckModal .management-modal-footer.split{
+  justify-content:flex-end !important;
+}
+
+#poundageCalculatorModal .poundage-calculator-footer{
+  justify-content:flex-end !important;
+}
+
+#consultantAccessModal .consultant-access-footer-v139{
+  justify-content:flex-end !important;
+}
+
+/* Final UI cleanup: remove non-essential header indicator pills */
+.header-pill{
+  display:none !important;
+}

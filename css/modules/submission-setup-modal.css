@@ -1,0 +1,123 @@
+/* ============================================================
+   Submission Setup as Internal Overview edit modal
+   ============================================================ */
+.management-overview-header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.management-submission-setup-edit-btn{
+  min-width:72px;
+  font-weight:800;
+}
+
+.management-settings-modal{
+  position:fixed;
+  inset:0;
+  z-index:2600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  background:rgba(15,31,24,.48);
+  backdrop-filter:blur(4px);
+}
+
+.management-settings-modal.hidden{
+  display:none !important;
+}
+
+.management-settings-modal-dialog{
+  width:min(1240px, calc(100vw - 44px));
+  max-height:calc(100vh - 44px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid #d7e3dc;
+  border-radius:20px;
+  background:#f6f9f7;
+  box-shadow:0 24px 70px rgba(14,45,31,.22);
+}
+
+.management-settings-modal-head{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:15px 18px;
+  border-bottom:1px solid #dbe7e0;
+  background:#fff;
+}
+
+.management-settings-modal-head h2{
+  margin:0;
+  font-size:21px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+  color:#173f30;
+}
+
+.management-settings-modal-close{
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  flex:0 0 35px;
+  padding:0;
+  border:1px solid #d5e1da;
+  border-radius:10px;
+  background:#fff;
+  color:#52675d;
+  font-size:21px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.management-settings-modal-close:hover{
+  border-color:#9db9aa;
+  color:#176b4d;
+  background:#f4faf7;
+}
+
+.management-settings-modal-body{
+  flex:1 1 auto;
+  min-height:0;
+  overflow:auto;
+  padding:16px 18px 22px;
+}
+
+.management-settings-modal-selection-row{
+  display:flex;
+  justify-content:flex-end;
+  margin:0 0 8px;
+}
+
+/* Give inline option editors enough stacking room inside the scrolling modal. */
+#managementSettingsView .management-inline-dropdown-editor,
+#managementSettingsView .management-settings-dropdown-editor{
+  z-index:2700 !important;
+}
+
+@media (max-width: 760px){
+  .management-overview-header-actions{
+    width:100%;
+    justify-content:space-between;
+  }
+  .management-settings-modal{
+    padding:10px;
+  }
+  .management-settings-modal-dialog{
+    width:calc(100vw - 20px);
+    max-height:calc(100vh - 20px);
+    border-radius:15px;
+  }
+  .management-settings-modal-body{
+    padding:12px;
+  }
+}
+
+body.management-settings-modal-open-v121{
+  overflow:hidden;
+}

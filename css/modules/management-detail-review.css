@@ -1,0 +1,149 @@
+/* detailed Management review inside the comparison table. */
+.management-comparison-main-value-v131{
+  font-weight:800;
+  color:#1c3d30;
+  line-height:1.25;
+}
+
+.management-comparison-main-value-v131.is-exceeded{
+  color:#c62828;
+}
+
+.management-comparison-poundage-detail-v131{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+
+.management-comparison-source-grid-v131{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px;
+}
+
+.management-comparison-source-grid-v131 > div,
+.management-poundage-source-details-v131 > div{
+  min-width:0;
+  padding:5px 6px;
+  border:1px solid #dce8e1;
+  border-radius:7px;
+  background:#f8fbf9;
+}
+
+.management-comparison-source-grid-v131 span,
+.management-poundage-source-details-v131 span,
+.management-comparison-remark-v131 span{
+  display:block;
+  margin-bottom:2px;
+  color:#718278;
+  font-size:9px;
+  font-weight:700;
+}
+
+.management-comparison-source-grid-v131 strong,
+.management-poundage-source-details-v131 strong{
+  display:block;
+  color:#304b3e;
+  font-size:10px;
+  line-height:1.25;
+  overflow-wrap:anywhere;
+}
+
+.management-comparison-remark-v131{
+  padding:6px 7px;
+  border-left:3px solid #d56a6a;
+  border-radius:6px;
+  background:#fff8f8;
+}
+
+.management-comparison-remark-v131 strong{
+  display:block;
+  color:#8f2f2f;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+
+.management-comparison-files-v131,
+.management-direct-file-list-v131{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+
+.management-comparison-file-v131,
+.management-direct-file-row-v131{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  min-width:0;
+  padding:6px 7px;
+  border:1px solid #dce8e1;
+  border-radius:8px;
+  background:#fbfdfc;
+}
+
+.management-comparison-file-copy-v131,
+.management-direct-file-row-v131 > div{
+  min-width:0;
+  flex:1;
+}
+
+.management-comparison-file-copy-v131 strong,
+.management-direct-file-row-v131 strong{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#29483a;
+  font-size:10px;
+}
+
+.management-comparison-file-copy-v131 small,
+.management-direct-file-row-v131 small{
+  display:block;
+  margin-top:2px;
+  color:#7b8d84;
+  font-size:9px;
+}
+
+.management-comparison-review-file-v131{
+  flex:0 0 auto;
+  min-height:27px;
+  padding:5px 8px;
+  border:1px solid #a7c7b7;
+  border-radius:7px;
+  background:#eef7f2;
+  color:#176b4d;
+  font:inherit;
+  font-size:9.5px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.management-comparison-review-file-v131:hover{
+  border-color:#6aa488;
+  background:#e2f2e9;
+}
+
+.management-comparison-empty-v131{
+  color:#94a29b;
+}
+
+.management-poundage-source-details-v131{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  margin-top:8px;
+}
+
+@media (max-width:760px){
+  .management-comparison-source-grid-v131,
+  .management-poundage-source-details-v131{
+    grid-template-columns:1fr;
+  }
+}

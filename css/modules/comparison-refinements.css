@@ -1,0 +1,639 @@
+/* ============================================================
+   larger text, tighter rows
+   ============================================================ */
+
+.management-comparison-filters{
+  width:min(800px, calc(100% - 24px)) !important;
+  max-height:min(64vh, 480px) !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding:6px !important;
+}
+
+.comparison-filter-panel-title{
+  margin-bottom:4px !important;
+}
+
+.comparison-filter-panel-title strong{
+  font-size:9px !important;
+}
+
+.comparison-filter-panel-title small{
+  font-size:7px !important;
+  line-height:1.15 !important;
+}
+
+.comparison-filter-count{
+  min-width:18px !important;
+  height:18px !important;
+  padding:0 4px !important;
+  font-size:7px !important;
+}
+
+.comparison-project-checklist{
+  max-height:165px !important;
+}
+
+.comparison-project-checkbox{
+  min-height:20px !important;
+  gap:5px !important;
+  padding:2px 5px !important;
+}
+
+.comparison-project-checkbox input{
+  width:11px !important;
+  height:11px !important;
+}
+
+.comparison-project-checkbox strong{
+  font-size:8px !important;
+  line-height:1.1 !important;
+}
+
+.comparison-project-checkbox small{
+  margin-top:0 !important;
+  font-size:6.8px !important;
+  line-height:1.05 !important;
+}
+
+.comparison-project-checkbox.all-projects span{
+  font-size:8px !important;
+}
+
+.comparison-active-categories{
+  gap:4px !important;
+}
+
+.comparison-category-card-head{
+  min-height:21px !important;
+  padding:2px 5px !important;
+}
+
+.comparison-category-card-head strong{
+  font-size:8px !important;
+}
+
+.comparison-category-options-checklist label{
+  min-height:19px !important;
+  gap:5px !important;
+  padding:2px 5px !important;
+}
+
+.comparison-category-options-checklist input{
+  width:10px !important;
+  height:10px !important;
+}
+
+.comparison-category-options-checklist span{
+  font-size:7.5px !important;
+  line-height:1.1 !important;
+}
+
+.comparison-category-options-checklist small{
+  min-width:15px !important;
+  height:15px !important;
+  font-size:6px !important;
+}
+
+.comparison-filter-sections-panel-inline .comparison-section-checklist{
+  gap:3px !important;
+}
+
+.comparison-section-checkbox{
+  min-height:19px !important;
+  gap:4px !important;
+  padding:2px 5px !important;
+}
+
+.comparison-section-checkbox input{
+  width:10px !important;
+  height:10px !important;
+}
+
+.comparison-section-checkbox span{
+  font-size:7.5px !important;
+  line-height:1.1 !important;
+}
+
+.comparison-filter-type-tabs button{
+  min-height:26px !important;
+  font-size:8px !important;
+}
+
+/* ============================================================
+   compact Landed / High Rise switch
+   ============================================================ */
+
+.comparison-filter-type-tabs{
+  gap: 0 !important;
+  margin-bottom: 6px !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.comparison-filter-type-tabs button{
+  min-height: 22px !important;
+  height: 22px !important;
+  padding: 2px 8px !important;
+  font-size: 7.4px !important;
+  line-height: 1 !important;
+  border-radius: 0 !important;
+}
+
+.comparison-filter-type-tabs button:first-child{
+  border-top-left-radius: 10px !important;
+}
+
+.comparison-filter-type-tabs button:last-child{
+  border-top-right-radius: 10px !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding-top: 5px !important;
+}
+
+.management-comparison-filters{
+  max-height: min(62vh, 460px) !important;
+}
+
+/* ============================================================
+   narrower comparison popup
+   ============================================================ */
+
+.management-comparison-filters{
+  width:min(720px, calc(100% - 24px)) !important;
+  max-height:min(62vh, 450px) !important;
+}
+
+.comparison-filter-columns{
+  grid-template-columns:
+    minmax(165px,.82fr)
+    minmax(205px,.96fr)
+    minmax(165px,.82fr) !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding:5px !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel{
+  border-right:1px solid #e0e9e4;
+}
+
+@media(max-width:760px){
+  .management-comparison-filters{
+    width:calc(100% - 14px) !important;
+  }
+
+  .comparison-filter-columns{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* ============================================================
+   side-by-side columns sized to content, no wasted width
+   ============================================================ */
+
+.management-comparison-filters{
+  width:fit-content !important;
+  max-width:calc(100% - 24px) !important;
+  max-height:min(70vh, 560px) !important;
+}
+
+.comparison-filter-columns{
+  display:inline-grid !important;
+  grid-template-columns:
+    minmax(140px,max-content)
+    minmax(140px,max-content)
+    minmax(140px,max-content) !important;
+  align-items:start !important;
+  width:auto !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  height:auto !important;
+}
+
+.comparison-project-checklist,
+.comparison-active-categories,
+.comparison-section-checklist{
+  width:auto !important;
+}
+
+.comparison-project-checkbox,
+.comparison-category-card,
+.comparison-section-checkbox{
+  width:auto !important;
+  min-width:150px;
+  max-width:190px;
+}
+
+@media(max-width:760px){
+  .management-comparison-filters{
+    width:calc(100% - 14px) !important;
+    max-width:calc(100% - 14px) !important;
+  }
+
+  .comparison-filter-columns{
+    width:100% !important;
+  }
+
+  .comparison-project-checkbox,
+  .comparison-category-card,
+  .comparison-section-checkbox{
+    max-width:none;
+  }
+}
+
+/* ============================================================
+   bigger text, taller popover, same narrow width
+   ============================================================ */
+
+.management-comparison-filters{
+  max-height:min(82vh, 720px) !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding:9px !important;
+}
+
+.comparison-filter-panel-title{
+  margin-bottom:6px !important;
+}
+
+.comparison-filter-panel-title strong{
+  font-size:12px !important;
+}
+
+.comparison-filter-panel-title small{
+  font-size:9.5px !important;
+  line-height:1.25 !important;
+}
+
+.comparison-filter-count{
+  min-width:22px !important;
+  height:22px !important;
+  padding:0 5px !important;
+  font-size:9px !important;
+}
+
+.comparison-project-checklist{
+  max-height:320px !important;
+}
+
+.comparison-project-checkbox{
+  min-height:34px !important;
+  gap:7px !important;
+  padding:5px 7px !important;
+}
+
+.comparison-project-checkbox input{
+  width:14px !important;
+  height:14px !important;
+}
+
+.comparison-project-checkbox strong{
+  font-size:11px !important;
+  line-height:1.2 !important;
+}
+
+.comparison-project-checkbox small{
+  font-size:9px !important;
+  line-height:1.15 !important;
+}
+
+.comparison-project-checkbox.all-projects span{
+  font-size:11px !important;
+}
+
+.comparison-active-categories{
+  gap:6px !important;
+}
+
+.comparison-category-card-head{
+  min-height:28px !important;
+  padding:5px 7px !important;
+}
+
+.comparison-category-card-head strong{
+  font-size:11px !important;
+}
+
+.comparison-category-options-checklist label{
+  min-height:26px !important;
+  gap:7px !important;
+  padding:5px 7px !important;
+}
+
+.comparison-category-options-checklist input{
+  width:13px !important;
+  height:13px !important;
+}
+
+.comparison-category-options-checklist span{
+  font-size:10.5px !important;
+  line-height:1.2 !important;
+}
+
+.comparison-category-options-checklist small{
+  min-width:19px !important;
+  height:19px !important;
+  font-size:8.5px !important;
+}
+
+.comparison-filter-sections-panel-inline .comparison-section-checklist{
+  gap:5px !important;
+}
+
+.comparison-section-checkbox{
+  min-height:26px !important;
+  gap:6px !important;
+  padding:5px 7px !important;
+}
+
+.comparison-section-checkbox input{
+  width:13px !important;
+  height:13px !important;
+}
+
+.comparison-section-checkbox span{
+  font-size:10.5px !important;
+  line-height:1.2 !important;
+}
+
+.comparison-filter-type-tabs button{
+  min-height:32px !important;
+  height:32px !important;
+  font-size:10.5px !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding-top:8px !important;
+}
+
+.comparison-project-checkbox,
+.comparison-category-card,
+.comparison-section-checkbox{
+  min-width:170px;
+  max-width:220px;
+}
+
+/* ============================================================
+   dial text back down slightly + trim leftover space
+   in the right-hand Sections column
+   ============================================================ */
+
+.management-comparison-filters{
+  max-height:min(80vh, 680px) !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding:8px !important;
+}
+
+.comparison-filter-panel-title strong{
+  font-size:11px !important;
+}
+
+.comparison-filter-panel-title small{
+  font-size:8.5px !important;
+}
+
+.comparison-filter-count{
+  min-width:19px !important;
+  height:19px !important;
+  font-size:8px !important;
+}
+
+.comparison-project-checklist{
+  max-height:280px !important;
+}
+
+.comparison-project-checkbox{
+  min-height:30px !important;
+  gap:6px !important;
+  padding:4px 6px !important;
+}
+
+.comparison-project-checkbox input{
+  width:13px !important;
+  height:13px !important;
+}
+
+.comparison-project-checkbox strong{
+  font-size:10px !important;
+}
+
+.comparison-project-checkbox small{
+  font-size:8.3px !important;
+}
+
+.comparison-project-checkbox.all-projects span{
+  font-size:10px !important;
+}
+
+.comparison-category-card-head{
+  min-height:25px !important;
+  padding:4px 6px !important;
+}
+
+.comparison-category-card-head strong{
+  font-size:10px !important;
+}
+
+.comparison-category-options-checklist label{
+  min-height:23px !important;
+  gap:6px !important;
+  padding:4px 6px !important;
+}
+
+.comparison-category-options-checklist input{
+  width:12px !important;
+  height:12px !important;
+}
+
+.comparison-category-options-checklist span{
+  font-size:9.5px !important;
+}
+
+.comparison-category-options-checklist small{
+  min-width:18px !important;
+  height:18px !important;
+  font-size:8px !important;
+}
+
+.comparison-section-checkbox{
+  min-height:23px !important;
+  gap:5px !important;
+  padding:4px 6px !important;
+}
+
+.comparison-section-checkbox input{
+  width:12px !important;
+  height:12px !important;
+}
+
+.comparison-section-checkbox span{
+  font-size:9.5px !important;
+}
+
+.comparison-filter-type-tabs button{
+  min-height:28px !important;
+  height:28px !important;
+  font-size:9.5px !important;
+}
+
+.comparison-project-checkbox,
+.comparison-category-card,
+.comparison-section-checkbox{
+  min-width:150px;
+  max-width:200px;
+}
+
+/* Sections pills: hug their own text instead of stretching to the
+   column's full max-content width, which is what left the empty
+   space to the right of shorter labels like "Poundage". */
+.comparison-filter-sections-panel-inline .comparison-section-checkbox{
+  width:fit-content !important;
+  max-width:200px !important;
+}
+
+/* ============================================================
+   wrap the Sections subtitle so it stops forcing the column
+   wide, shrink the popover height a bit more, smaller wording
+   ============================================================ */
+
+.comparison-sections-title small{
+  display:block !important;
+  max-width:120px !important;
+  white-space:normal !important;
+}
+
+.management-comparison-filters{
+  max-height:min(74vh, 600px) !important;
+}
+
+.comparison-filter-project-panel,
+.comparison-filter-category-panel,
+.comparison-filter-sections-panel-inline{
+  padding:7px !important;
+}
+
+.comparison-filter-panel-title strong{
+  font-size:10px !important;
+}
+
+.comparison-filter-panel-title small{
+  font-size:7.5px !important;
+}
+
+.comparison-filter-count{
+  min-width:17px !important;
+  height:17px !important;
+  font-size:7px !important;
+}
+
+.comparison-project-checklist{
+  max-height:240px !important;
+}
+
+.comparison-project-checkbox{
+  min-height:27px !important;
+  gap:5px !important;
+  padding:3px 5px !important;
+}
+
+.comparison-project-checkbox input{
+  width:12px !important;
+  height:12px !important;
+}
+
+.comparison-project-checkbox strong{
+  font-size:9.3px !important;
+}
+
+.comparison-project-checkbox small{
+  font-size:7.5px !important;
+}
+
+.comparison-project-checkbox.all-projects span{
+  font-size:9.3px !important;
+}
+
+.comparison-category-card-head{
+  min-height:22px !important;
+  padding:3px 5px !important;
+}
+
+.comparison-category-card-head strong{
+  font-size:9.3px !important;
+}
+
+.comparison-category-options-checklist label{
+  min-height:20px !important;
+  gap:5px !important;
+  padding:3px 5px !important;
+}
+
+.comparison-category-options-checklist input{
+  width:11px !important;
+  height:11px !important;
+}
+
+.comparison-category-options-checklist span{
+  font-size:8.7px !important;
+}
+
+.comparison-category-options-checklist small{
+  min-width:17px !important;
+  height:17px !important;
+  font-size:7.2px !important;
+}
+
+.comparison-section-checkbox{
+  min-height:20px !important;
+  gap:4px !important;
+  padding:3px 5px !important;
+}
+
+.comparison-section-checkbox input{
+  width:11px !important;
+  height:11px !important;
+}
+
+.comparison-section-checkbox span{
+  font-size:8.7px !important;
+}
+
+.comparison-filter-type-tabs button{
+  min-height:25px !important;
+  height:25px !important;
+  font-size:8.7px !important;
+}
+
+.comparison-project-checkbox,
+.comparison-category-card,
+.comparison-section-checkbox{
+  min-width:140px;
+  max-width:190px;
+}
+
+.comparison-filter-sections-panel-inline .comparison-section-checkbox{
+  max-width:190px !important;
+}

@@ -1,0 +1,358 @@
+/* ============================================================
+   Internal Pile Check action beside Pile Efficiency & Loading
+   ============================================================ */
+.management-pile-check-comparison-btn-v136{
+  flex:0 0 auto;
+  min-height:26px;
+  padding:4px 10px;
+  border:1px solid #b9d5c6;
+  border-radius:8px;
+  background:#fff;
+  color:#2f6c4d;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.1;
+  cursor:pointer;
+}
+
+.management-pile-check-comparison-btn-v136:hover:not(:disabled){
+  background:#edf6f1;
+  border-color:#8fbea6;
+}
+
+.management-pile-check-comparison-btn-v136:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.management-pile-check-chooser-v136{
+  position:fixed;
+  z-index:3200;
+  padding:8px;
+  border:1px solid #d5e4dc;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 18px 44px rgba(18,45,34,.18);
+}
+
+.management-pile-check-chooser-v136.hidden{
+  display:none !important;
+}
+
+.management-pile-check-chooser-head-v136{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:5px 6px 8px;
+}
+
+.management-pile-check-chooser-head-v136 strong{
+  color:#203a2d;
+  font-size:12px;
+}
+
+.management-pile-check-chooser-head-v136 small{
+  color:#708078;
+  font-size:9.5px;
+}
+
+.management-pile-check-chooser-list-v136{
+  display:grid;
+  gap:5px;
+  max-height:245px;
+  overflow:auto;
+}
+
+.management-pile-check-choice-v136{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+  padding:8px 9px;
+  border:1px solid #e1ebe5;
+  border-radius:9px;
+  background:#fbfdfc;
+  color:#294638;
+  text-align:left;
+  cursor:pointer;
+}
+
+.management-pile-check-choice-v136:hover{
+  border-color:#9fc8b3;
+  background:#f0f7f3;
+}
+
+.management-pile-check-choice-v136 strong{
+  min-width:0;
+  overflow:hidden;
+  font-size:10.5px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.management-pile-check-choice-v136 span{
+  flex:0 0 auto;
+  color:#687a71;
+  font-size:9.5px;
+  font-weight:700;
+}
+
+/* balance pile-check table column ratios */
+.management-pile-table{
+  table-layout:fixed !important;
+}
+
+.management-pile-table col.mp-col-column{ width:90px; }
+.management-pile-table col.mp-col-loading{ width:120px; }
+.management-pile-table col.mp-col-type{ width:118px; }
+.management-pile-table col.mp-col-size{ width:78px; }
+.management-pile-table col.mp-col-no{ width:98px; }
+.management-pile-table col.mp-col-efficiency{ width:108px; }
+.management-pile-table col.mp-col-cost{ width:78px; }
+.management-pile-table col.mp-col-action{ width:82px; }
+
+.management-pile-table th,
+.management-pile-table td{
+  white-space:normal !important;
+  vertical-align:middle;
+}
+
+.management-pile-table select,
+.management-pile-table input{
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.management-pile-table td:nth-child(1),
+.management-pile-table td:nth-child(2),
+.management-pile-table td:nth-child(4),
+.management-pile-table td:nth-child(5),
+.management-pile-table td:nth-child(6),
+.management-pile-table td:nth-child(7),
+.management-pile-table td:nth-child(9),
+.management-pile-table td:nth-child(10),
+.management-pile-table td:nth-child(11),
+.management-pile-table td:nth-child(12),
+.management-pile-table td:nth-child(13){
+  text-align:center;
+}
+
+.management-pile-table td:nth-child(3),
+.management-pile-table td:nth-child(8){
+  text-align:center;
+}
+
+.management-row-auto-btn{
+  width:100%;
+  padding:6px 0;
+}
+
+/* pile optimisation eligibility states */
+.management-pile-table td.efficiency-low,
+.management-pile-table td.efficiency-high{
+  color:#a14b45 !important;
+  background:#fdf1f0 !important;
+  font-weight:800;
+}
+
+.management-pile-table td.efficiency-good{
+  color:#176b4d !important;
+  background:#edf8f2 !important;
+  font-weight:800;
+}
+
+.management-row-auto-btn:disabled{
+  opacity:.58;
+  cursor:not-allowed;
+  background:#eef2f0;
+  color:#728079;
+}
+
+/* ============================================================
+   Compact, more readable Internal Pile Check
+   Narrow the modal/table while increasing text legibility.
+   ============================================================ */
+#managementPileCheckModal .management-pile-modal{
+  width:min(1220px,calc(100vw - 28px)) !important;
+}
+
+#managementPileCheckModal .management-modal-head h2{
+  font-size:23px;
+}
+
+#managementPileCheckModal .management-modal-head p{
+  font-size:11px;
+}
+
+#managementPileCheckModal .management-pile-summary{
+  gap:9px;
+  padding:11px 14px 6px;
+}
+
+#managementPileCheckModal .management-pile-summary > div{
+  padding:10px 12px;
+}
+
+#managementPileCheckModal .management-pile-summary span{
+  font-size:9.5px;
+  letter-spacing:.045em;
+}
+
+#managementPileCheckModal .management-pile-summary strong{
+  font-size:18px;
+}
+
+#managementPileCheckModal .management-pile-toolbar strong{
+  font-size:12.5px;
+}
+
+#managementPileCheckModal .management-pile-toolbar .primary-btn{
+  font-size:10.5px;
+}
+
+#managementPileCheckModal .management-pile-table-wrap{
+  padding:0 14px 10px;
+}
+
+#managementPileCheckModal .management-pile-table{
+  width:100%;
+  min-width:1160px;
+  font-size:10px;
+}
+
+#managementPileCheckModal .management-pile-table col.mp-col-column{ width:70px; }
+#managementPileCheckModal .management-pile-table col.mp-col-loading{ width:88px; }
+#managementPileCheckModal .management-pile-table col.mp-col-type{ width:112px; }
+#managementPileCheckModal .management-pile-table col.mp-col-size{ width:70px; }
+#managementPileCheckModal .management-pile-table col.mp-col-no{ width:68px; }
+#managementPileCheckModal .management-pile-table col.mp-col-capacity{ width:86px; }
+#managementPileCheckModal .management-pile-table col.mp-col-efficiency{ width:86px; }
+#managementPileCheckModal .management-pile-table col.mp-col-cost{ width:78px; }
+#managementPileCheckModal .management-pile-table col.mp-col-action{ width:74px; }
+
+#managementPileCheckModal .management-pile-table th,
+#managementPileCheckModal .management-pile-table td{
+  padding:7px 5px;
+  font-size:10px;
+}
+
+#managementPileCheckModal .management-pile-table thead th{
+  font-size:10.5px;
+  line-height:1.2;
+}
+
+#managementPileCheckModal .management-pile-table th small{
+  font-size:9px;
+}
+
+#managementPileCheckModal .management-pile-table select,
+#managementPileCheckModal .management-pile-table input{
+  height:31px;
+  padding:4px 22px 4px 6px !important;
+  font-size:9.5px !important;
+}
+
+#managementPileCheckModal .management-row-auto-btn{
+  padding:7px 4px;
+  font-size:9.5px;
+}
+
+#managementPileCheckModal .management-modal-footer .primary-btn{
+  font-size:10.5px;
+}
+
+@media (max-width:1180px){
+  #managementPileCheckModal .management-pile-modal{
+    width:calc(100vw - 18px) !important;
+  }
+}
+
+/* Total / Overall row at the end of Pile Check */
+#managementPileCheckModal .management-pile-total-row td{
+  border-top:2px solid #b8cec2;
+  background:#f4f8f6;
+  font-weight:800;
+}
+
+#managementPileCheckModal .management-pile-total-row .management-pile-total-label{
+  color:#244b38;
+  font-size:10.5px;
+  line-height:1.15;
+}
+
+#managementPileCheckModal .management-pile-total-row .management-pile-total-value{
+  color:#223c30;
+  font-size:10.5px;
+}
+
+#managementPileCheckModal .management-pile-total-row .management-pile-total-muted{
+  color:#9aa9a1;
+}
+
+#managementPileCheckModal .management-pile-total-row td.efficiency-low,
+#managementPileCheckModal .management-pile-total-row td.efficiency-high{
+  color:#a14b45 !important;
+  background:#fdf1f0 !important;
+}
+
+#managementPileCheckModal .management-pile-total-row td.efficiency-good{
+  color:#176b4d !important;
+  background:#edf8f2 !important;
+}
+
+/* ============================================================
+   Fit the full Pile Check table without horizontal scroll
+   ============================================================ */
+#managementPileCheckModal .management-pile-modal{
+  width:min(1180px,calc(100vw - 24px)) !important;
+}
+
+#managementPileCheckModal .management-pile-table-wrap{
+  overflow-x:hidden !important;
+  padding-left:12px;
+  padding-right:12px;
+}
+
+#managementPileCheckModal .management-pile-table{
+  width:100% !important;
+  min-width:0 !important;
+  table-layout:fixed !important;
+}
+
+/* Keep the first two fields deliberately tight; give the proposal fields the space. */
+#managementPileCheckModal .management-pile-table col.mp-col-column{ width:48px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-loading{ width:66px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-type{ width:96px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-size{ width:62px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-no{ width:58px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-capacity{ width:80px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-efficiency{ width:82px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-cost{ width:66px !important; }
+#managementPileCheckModal .management-pile-table col.mp-col-action{ width:64px !important; }
+
+#managementPileCheckModal .management-pile-table th,
+#managementPileCheckModal .management-pile-table td{
+  padding-left:4px !important;
+  padding-right:4px !important;
+}
+
+#managementPileCheckModal .management-pile-table th:first-child,
+#managementPileCheckModal .management-pile-table td:first-child{
+  padding-left:3px !important;
+  padding-right:3px !important;
+}
+
+#managementPileCheckModal .management-pile-table th:nth-child(2),
+#managementPileCheckModal .management-pile-table td:nth-child(2){
+  padding-left:3px !important;
+  padding-right:3px !important;
+}
+
+#managementPileCheckModal .management-pile-table select,
+#managementPileCheckModal .management-pile-table input{
+  padding-left:5px !important;
+  padding-right:18px !important;
+}

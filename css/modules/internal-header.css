@@ -1,0 +1,85 @@
+/* cleaner Internal shell/header */
+
+/* Internal no longer needs the one-item sidebar. External remains unchanged. */
+#appShell.management-mode-v126{
+  grid-template-columns:1fr !important;
+}
+#appShell.management-mode-v126 > #sidebar{
+  display:none !important;
+}
+#appShell.management-mode-v126 #mainShell{
+  width:100%;
+}
+
+/* Header account sits beside Edit. */
+#managementOverviewView .management-overview-header-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:9px;
+}
+.management-header-account{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:34px;
+  padding:5px 6px 5px 10px;
+  border:1px solid #dbe7e0;
+  border-radius:11px;
+  background:#fff;
+}
+.management-header-account-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  line-height:1.12;
+}
+.management-header-account-copy strong{
+  font-size:10.5px;
+  color:#1d3a2f;
+}
+.management-header-account-copy small{
+  max-width:190px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:9px;
+  color:#71827a;
+}
+.management-header-logout{
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:0;
+  border-radius:8px;
+  background:#f2f7f4;
+  color:#2a5e49;
+  cursor:pointer;
+  font:700 13px/1 inherit;
+}
+.management-header-logout:hover{
+  background:#e7f1eb;
+}
+
+/* Selected Projects card was removed; keep the remaining summary cards balanced. */
+#managementOverviewView .management-stat-grid-v101{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+}
+
+@media (max-width:700px){
+  #managementOverviewView .page-header{
+    align-items:flex-start !important;
+  }
+  #managementOverviewView .management-overview-header-actions{
+    width:100%;
+    justify-content:space-between;
+  }
+  .management-header-account-copy small{
+    max-width:145px;
+  }
+  #managementOverviewView .management-stat-grid-v101{
+    grid-template-columns:1fr !important;
+  }
+}

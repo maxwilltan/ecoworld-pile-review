@@ -1,0 +1,356 @@
+.poundage-calculator-trigger{
+  width:100%;
+  min-height:34px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#fff;
+  padding:6px 9px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:9px;
+  text-align:left;
+  cursor:pointer;
+  font:inherit;
+  color:var(--text);
+  transition:border-color .16s ease, background .16s ease;
+}
+
+.poundage-calculator-trigger:hover{
+  border-color:#7fae9b;
+  background:#f8fbfa;
+}
+
+.poundage-trigger-main{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  min-width:0;
+}
+
+.poundage-trigger-main strong{
+  font-size:10px;
+  font-weight:800;
+}
+
+.poundage-trigger-main small{
+  color:var(--muted);
+  font-size:9px;
+}
+
+.poundage-trigger-action{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  color:var(--green);
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.poundage-calculator-modal{
+  width:min(560px, calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 24px 70px rgba(12, 43, 32, .22);
+  padding:18px;
+}
+
+.poundage-calculator-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.poundage-calculator-head h2{
+  margin:4px 0 6px;
+  font-size:16px;
+}
+
+.poundage-calculator-head p:last-child{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.45;
+}
+
+.poundage-form-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);
+  align-items:end;
+  gap:10px;
+}
+
+.poundage-input-card{
+  display:block;
+  min-width:0;
+}
+
+.poundage-input-card > span{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.poundage-input-with-unit{
+  display:flex;
+  align-items:stretch;
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.poundage-input-with-unit:focus-within{
+  border-color:#6eaa91;
+  box-shadow:0 0 0 3px rgba(23,107,77,.08);
+}
+
+.poundage-input-with-unit input{
+  min-width:0;
+  width:100%;
+  border:0;
+  outline:0;
+  padding:8px 10px;
+  font:inherit;
+  font-size:10px;
+}
+
+.poundage-input-with-unit strong{
+  display:flex;
+  align-items:center;
+  padding:0 9px;
+  border-left:1px solid var(--border);
+  background:#f5f8f6;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.poundage-formula-symbol{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:34px;
+  color:var(--muted);
+  font-size:15px;
+  font-weight:800;
+}
+
+.poundage-result-panel{
+  margin-top:14px;
+  border:1px solid #dce9e3;
+  background:#f5faf7;
+  border-radius:10px;
+  padding:11px 12px;
+  display:grid;
+  gap:4px;
+}
+
+.poundage-result-panel span,
+.poundage-result-panel small{
+  color:var(--muted);
+  font-size:9px;
+}
+
+.poundage-result-panel strong{
+  color:var(--green);
+  font-size:17px;
+  line-height:1.2;
+}
+
+.poundage-calculator-error{
+  min-height:16px;
+  margin-top:6px;
+  color:#b42318;
+  font-size:10px;
+  font-weight:600;
+}
+
+.poundage-calculator-footer{
+  margin-top:6px;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.poundage-calculator-footer > small{
+  color:var(--muted);
+  font-size:9px;
+}
+
+.poundage-calculator-footer > div{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+@media (max-width:620px){
+  .poundage-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .poundage-formula-symbol{
+    height:auto;
+  }
+
+  .poundage-calculator-footer{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+/* ============================================================
+   Align Poundage with Loading & Capacity visual treatment
+   Keep Poundage compact sizing, adopt Loading/Capacity box style.
+   ============================================================ */
+.poundage-calculator-trigger{
+  background:linear-gradient(180deg,#fbfdfc,#f3f9f6);
+  border-color:#bcd8ca;
+}
+
+.poundage-calculator-trigger:hover{
+  border-color:#8db6a1;
+  background:#eef7f2;
+}
+
+.poundage-trigger-main strong{
+  color:#204c37;
+}
+
+.poundage-trigger-action{
+  padding:4px 6px;
+  border-radius:7px;
+  background:#e2f1e9;
+  color:#176b4d;
+}
+
+.poundage-trigger-action strong{
+  font-size:11px;
+}
+
+/* ============================================================
+   Exact Loading & Capacity outline for Poundage triggers
+   Force the same visible border/shape so generic button/table
+   rules cannot override the outline.
+   ============================================================ */
+.poundage-calculator-trigger{
+  border:1px solid #bcd8ca !important;
+  border-radius:8px !important;
+  background:linear-gradient(180deg,#fbfdfc,#f3f9f6) !important;
+}
+
+.poundage-calculator-trigger:hover{
+  border-color:#8db6a1 !important;
+  background:#eef7f2 !important;
+}
+
+.poundage-calculator-trigger:focus-visible{
+  outline:2px solid rgba(23,107,77,.22);
+  outline-offset:2px;
+}
+
+/* ============================================================
+   Poundage guide exceedance warning + required reason
+   Based on V76 visual layout.
+   ============================================================ */
+.poundage-value-exceeded,
+.poundage-result-exceeded{
+  color:#c62828 !important;
+}
+
+.poundage-caption-exceeded{
+  color:#b42318 !important;
+  font-weight:700;
+}
+
+.poundage-calculator-trigger.is-exceeding{
+  border-color:#e2aaa5 !important;
+}
+
+.poundage-calculator-trigger.is-exceeding:hover{
+  border-color:#cc6f67 !important;
+}
+
+.poundage-result-panel.is-exceeding{
+  border-color:#e8b4af;
+  background:#fff8f7;
+}
+
+.poundage-guide-text{
+  margin-top:2px;
+  font-weight:700;
+}
+
+.poundage-exceed-warning{
+  margin-top:10px;
+  padding:10px 11px;
+  border:1px solid #e6b2ad;
+  border-radius:9px;
+  background:#fff8f7;
+}
+
+.poundage-exceed-warning-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:4px;
+}
+
+.poundage-exceed-warning-head strong{
+  color:#b42318;
+  font-size:10px;
+}
+
+.poundage-exceed-warning-head span{
+  padding:3px 6px;
+  border-radius:999px;
+  background:#fce8e6;
+  color:#b42318;
+  font-size:8px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.poundage-exceed-warning p{
+  margin:0 0 7px;
+  color:#7a3d38;
+  font-size:9px;
+  line-height:1.4;
+}
+
+.poundage-exceed-warning label{
+  display:block;
+  margin-bottom:4px;
+  color:#5d2925;
+  font-size:9px;
+  font-weight:800;
+}
+
+.poundage-exceed-warning textarea{
+  width:100%;
+  min-height:64px;
+  resize:vertical;
+  border:1px solid #d8aaa6;
+  border-radius:8px;
+  padding:8px 9px;
+  outline:0;
+  font:inherit;
+  font-size:10px;
+  color:var(--text);
+  background:#fff;
+}
+
+.poundage-exceed-warning textarea:focus{
+  border-color:#c96f67;
+  box-shadow:0 0 0 3px rgba(180,35,24,.08);
+}

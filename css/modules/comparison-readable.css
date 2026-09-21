@@ -1,0 +1,81 @@
+/* slightly larger text for the Internal comparison table */
+#managementOverviewView .management-comparison-table{
+  font-size:9.5px !important;
+}
+
+#managementOverviewView .management-comparison-table th,
+#managementOverviewView .management-comparison-table td{
+  padding:6px 7px !important;
+  font-size:9.5px !important;
+  line-height:1.32 !important;
+}
+
+/* Project / revision headings */
+#managementOverviewView .management-comparison-project-head-v101 strong,
+#managementOverviewView .management-comparison-project-head-v118 strong,
+#managementOverviewView .management-comparison-table thead th:not(:first-child) strong{
+  font-size:11px !important;
+  line-height:1.25 !important;
+}
+
+#managementOverviewView .management-comparison-project-head-v101 small,
+#managementOverviewView .management-comparison-project-head-v118 small,
+#managementOverviewView .management-comparison-table thead th:not(:first-child) small{
+  font-size:8px !important;
+  line-height:1.25 !important;
+}
+
+/* Left-side item labels and comparison values */
+#managementOverviewView .management-comparison-table tbody td:first-child,
+#managementOverviewView .management-comparison-table tbody td:first-child span,
+#managementOverviewView .management-comparison-table tbody td:not(:first-child),
+#managementOverviewView .management-comparison-table tbody td:not(:first-child) span,
+#managementOverviewView .management-comparison-table tbody td:not(:first-child) strong{
+  font-size:9.5px !important;
+}
+
+/* Section divider rows */
+#managementOverviewView .management-comparison-section-row td,
+#managementOverviewView .management-comparison-section-row td strong,
+#managementOverviewView .management-comparison-section-row td span{
+  font-size:8.5px !important;
+  line-height:1.25 !important;
+}
+
+/* Small guide / secondary wording remains subordinate but readable */
+#managementOverviewView .comparison-poundage-guide-text,
+#managementOverviewView .management-comparison-table tbody td:first-child .comparison-poundage-guide-text{
+  font-size:8px !important;
+  line-height:1.3 !important;
+}
+
+/* Poundage item + guide on one line */
+#managementOverviewView .comparison-poundage-item{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+  gap:5px !important;
+}
+
+#managementOverviewView .comparison-poundage-label{
+  display:inline !important;
+}
+
+#managementOverviewView .comparison-poundage-divider{
+  display:inline !important;
+  color:#9aaba2;
+  font-size:8.2px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+#managementOverviewView .comparison-poundage-guide-text,
+#managementOverviewView .management-comparison-table tbody td:first-child .comparison-poundage-guide-text{
+  display:inline !important;
+  margin:0 !important;
+  font-size:8px !important;
+  line-height:1.3 !important;
+  color:#74877d !important;
+  font-weight:600 !important;
+}

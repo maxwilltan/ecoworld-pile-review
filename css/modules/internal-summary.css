@@ -1,0 +1,48 @@
+/* compact Internal summary cards while preserving V126 widths */
+
+/* Keep the same two-column width layout; only reduce vertical bulk. */
+#managementOverviewView .management-stat-grid-v101{
+  margin-bottom:10px !important;
+}
+
+#managementOverviewView .management-stat-card{
+  padding:8px 12px !important;
+  border-radius:12px !important;
+}
+
+#managementOverviewView .management-stat-card > span{
+  font-size:8px !important;
+  letter-spacing:.055em !important;
+}
+
+#managementOverviewView .management-stat-card > strong{
+  margin-top:2px !important;
+  font-size:17px !important;
+  line-height:1.05 !important;
+}
+
+#managementOverviewView .management-weekly-submissions-card{
+  padding:0 !important;
+}
+
+#managementOverviewView .management-weekly-submissions-trigger{
+  padding:8px 34px 8px 12px !important;
+  min-height:0 !important;
+  border-radius:12px !important;
+}
+
+#managementOverviewView .management-weekly-submissions-trigger > span:first-child{
+  font-size:8px !important;
+  letter-spacing:.055em !important;
+}
+
+#managementOverviewView .management-weekly-submissions-trigger > strong{
+  margin-top:2px !important;
+  font-size:17px !important;
+  line-height:1.05 !important;
+}
+
+#managementOverviewView .management-weekly-chevron{
+  top:50% !important;
+  transform:translateY(-50%);
+}

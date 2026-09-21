@@ -1,0 +1,291 @@
+/* Consultant submission success notice */
+.submission-success-backdrop{
+  z-index:1600;
+  background:rgba(15,42,30,.42);
+  backdrop-filter:blur(5px);
+}
+
+.submission-success-modal{
+  width:min(430px,calc(100vw - 32px));
+  padding:26px 26px 22px;
+  border:1px solid #cfe0d5;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 28px 70px rgba(19,50,37,.22);
+  text-align:center;
+}
+
+.submission-success-icon{
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  margin:0 auto 14px;
+  border:1px solid #9fceb2;
+  border-radius:50%;
+  background:linear-gradient(180deg,#f4fbf7 0%,#eaf6ef 100%);
+  color:#176b4d;
+  font-size:27px;
+  font-weight:800;
+}
+
+.submission-success-eyebrow{
+  margin:0 0 6px;
+  color:#176b4d;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+
+.submission-success-modal h2{
+  margin:0;
+  color:#173a2b;
+  font-size:22px;
+  letter-spacing:-.03em;
+}
+
+.submission-success-copy{
+  margin:7px auto 18px;
+  color:#73847b;
+  font-size:12px;
+  line-height:1.55;
+}
+
+.submission-success-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:18px;
+  text-align:left;
+}
+
+.submission-success-details>div{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid #dfe9e3;
+  border-radius:11px;
+  background:#f8fbf9;
+}
+
+.submission-success-details span{
+  display:block;
+  margin-bottom:3px;
+  color:#839189;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.submission-success-details strong{
+  display:block;
+  overflow:hidden;
+  color:#233c31;
+  font-size:11px;
+  font-weight:700;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.submission-success-time{
+  grid-column:1 / -1;
+}
+
+.submission-success-done{
+  width:100%;
+  min-height:38px;
+  font-size:11px;
+}
+
+@media (max-width:520px){
+  .submission-success-modal{
+    padding:22px 18px 18px;
+  }
+
+  .submission-success-details{
+    grid-template-columns:1fr;
+  }
+
+  .submission-success-time{
+    grid-column:auto;
+  }
+}
+
+/* styled save-failure notice; replaces browser alert for submission errors. */
+.submission-error-backdrop{
+  background:rgba(54,30,30,.34);
+}
+
+.submission-error-modal{
+  border-color:#edcccc;
+}
+
+.submission-error-icon{
+  border-color:#e8b8b8;
+  background:linear-gradient(180deg,#fff8f8 0%,#fff0f0 100%);
+  color:#b42318;
+}
+
+.submission-error-eyebrow{
+  color:#b42318;
+}
+
+.submission-error-copy{
+  margin-bottom:12px;
+}
+
+.submission-error-note{
+  margin:0 0 18px;
+  padding:10px 12px;
+  border:1px solid #eedada;
+  border-radius:11px;
+  background:#fff9f9;
+  color:#765b5b;
+  font-size:10px;
+  line-height:1.5;
+  text-align:left;
+}
+
+.submission-error-done{
+  background:#7f1d1d;
+  border-color:#7f1d1d;
+}
+
+.submission-error-done:hover{
+  background:#681818;
+  border-color:#681818;
+}
+
+/* confirmation step before a consultant submission is saved. */
+.submission-confirm-backdrop{
+  background:rgba(15,42,30,.38);
+}
+
+.submission-confirm-modal{
+  position:relative;
+  width:min(440px,calc(100vw - 32px));
+}
+
+.submission-confirm-close{
+  position:absolute;
+  top:14px;
+  left:14px;
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  padding:0;
+  border:1px solid #d8e5dc;
+  border-radius:9px;
+  background:#f8fbf9;
+  color:#53685d;
+  font:700 19px/1 Arial,sans-serif;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+
+.submission-confirm-close:hover{
+  border-color:#bdd0c3;
+  background:#edf5f0;
+  color:#176b4d;
+}
+
+.submission-confirm-close:focus-visible{
+  outline:2px solid rgba(23,107,77,.24);
+  outline-offset:2px;
+}
+
+.submission-confirm-icon{
+  border-color:#b8d5c4;
+  background:linear-gradient(180deg,#f7fbf8 0%,#eef7f1 100%);
+  color:#176b4d;
+  font-size:24px;
+}
+
+.submission-confirm-eyebrow{
+  color:#176b4d;
+}
+
+.submission-confirm-copy{
+  margin-bottom:16px;
+}
+
+.submission-confirm-details{
+  margin-bottom:18px;
+}
+
+.submission-confirm-actions{
+  display:block;
+}
+
+.submission-confirm-actions button{
+  width:100%;
+  min-height:38px;
+  font-size:11px;
+}
+
+@media (max-width:420px){
+  .submission-confirm-close{
+    top:11px;
+    left:11px;
+  }
+}
+
+/* custom confirmation for deleting a consultant submission. */
+.submission-delete-backdrop{
+  background:rgba(54,30,30,.38);
+}
+
+.submission-delete-modal{
+  border-color:#edcccc;
+}
+
+.submission-delete-close{
+  border-color:#ead6d6;
+  background:#fff9f9;
+  color:#765b5b;
+}
+
+.submission-delete-close:hover{
+  border-color:#ddbaba;
+  background:#fff0f0;
+  color:#b42318;
+}
+
+.submission-delete-close:focus-visible{
+  outline-color:rgba(180,35,24,.22);
+}
+
+.submission-delete-icon{
+  border-color:#e8b8b8;
+  background:linear-gradient(180deg,#fff8f8 0%,#fff0f0 100%);
+  color:#b42318;
+  font-size:23px;
+}
+
+.submission-delete-eyebrow{
+  color:#b42318;
+}
+
+.submission-delete-copy{
+  margin-bottom:16px;
+}
+
+.submission-delete-submit{
+  width:100%;
+  min-height:38px;
+  border-color:#b42318;
+  background:#b42318;
+  color:#fff;
+  font-size:11px;
+}
+
+.submission-delete-submit:hover{
+  border-color:#981b12;
+  background:#981b12;
+}
+
+.submission-delete-submit:focus-visible{
+  outline:2px solid rgba(180,35,24,.22);
+  outline-offset:2px;
+}

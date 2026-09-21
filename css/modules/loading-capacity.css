@@ -1,0 +1,1142 @@
+/* ============================================================
+   Loading & Capacity drill-down + Excel paste
+   ============================================================ */
+.loading-summary-trigger{
+  width:100%;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 12px;
+  border:1px solid #cfe0d7;
+  border-radius:10px;
+  background:#f7fbf9;
+  color:var(--text);
+  text-align:left;
+}
+
+.loading-summary-trigger:hover{
+  border-color:#8db6a1;
+  background:#eef7f2;
+}
+
+.loading-summary-value{
+  font-size:13px;
+  font-weight:800;
+  color:#204c37;
+}
+
+.loading-summary-action{
+  color:var(--primary);
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:rgba(16,42,31,.42);
+  backdrop-filter:blur(3px);
+}
+
+.loading-modal{
+  width:min(1380px,calc(100vw - 30px));
+  max-height:calc(100vh - 30px);
+  overflow:auto;
+  background:#fff;
+  border:1px solid #cddfd5;
+  border-radius:20px;
+  box-shadow:0 28px 70px rgba(19,50,37,.22);
+}
+
+.loading-modal-head{
+  position:sticky;
+  top:0;
+  z-index:4;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 18px 13px;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+
+.modal-eyebrow{
+  margin:0 0 4px;
+  color:var(--primary);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+
+.loading-modal-head h2{
+  margin:0 0 3px;
+  font-size:22px;
+  letter-spacing:-.03em;
+}
+
+.loading-modal-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.modal-close-btn{
+  width:34px;
+  height:34px;
+  flex:0 0 auto;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+  color:#687b72;
+  font-size:20px;
+  line-height:1;
+}
+
+.loading-summary-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  padding:12px 18px 4px;
+}
+
+.loading-summary-strip>div{
+  padding:11px 12px;
+  border:1px solid #d7e6de;
+  border-radius:12px;
+  background:#f7fbf9;
+}
+
+.loading-summary-strip span,
+.loading-summary-strip strong{
+  display:block;
+}
+
+.loading-summary-strip span{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.loading-summary-strip strong{
+  margin-top:4px;
+  color:#214d38;
+  font-size:16px;
+}
+
+.loading-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 18px 10px;
+}
+
+.loading-toolbar-copy strong,
+.loading-toolbar-copy small{
+  display:block;
+}
+
+.loading-toolbar-copy strong{
+  font-size:13px;
+}
+
+.loading-toolbar-copy small{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.loading-toolbar-actions{
+  display:flex;
+  gap:8px;
+}
+
+.compact-btn{
+  padding:9px 12px !important;
+  border-radius:10px !important;
+  font-size:12px !important;
+}
+
+.excel-paste-panel{
+  margin:0 18px 12px;
+  padding:12px;
+  border:1px solid #cfe1d7;
+  border-radius:13px;
+  background:#f6faf8;
+}
+
+.excel-paste-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:9px;
+}
+
+.excel-paste-head strong,
+.excel-paste-head small{
+  display:block;
+}
+
+.excel-paste-head strong{
+  font-size:13px;
+}
+
+.excel-paste-head small{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.text-action-btn{
+  border:none;
+  background:none;
+  color:var(--primary);
+  font-size:11px;
+  font-weight:700;
+}
+
+.excel-column-guide{
+  display:grid;
+  grid-template-columns:1.05fr 1.15fr .8fr .75fr 1fr 1fr;
+  gap:4px;
+  margin-bottom:5px;
+}
+
+.excel-column-guide span{
+  padding:5px 7px;
+  border-radius:7px;
+  background:#e8f2ed;
+  color:#4d695c;
+  font-size:9px;
+  font-weight:700;
+  text-align:center;
+}
+
+.excel-paste-input{
+  min-height:96px;
+  padding:10px 11px !important;
+  border-radius:10px !important;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;
+  line-height:1.5;
+  white-space:pre;
+}
+
+.excel-paste-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:8px;
+}
+
+.excel-paste-actions small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.loading-table-wrap{
+  padding:0 18px;
+  overflow:auto;
+}
+
+.loading-capacity-table{
+  width:100%;
+  min-width:1120px;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:11px;
+}
+
+.loading-capacity-table th,
+.loading-capacity-table td{
+  padding:7px;
+  border-right:1px solid #dce8e1;
+  border-bottom:1px solid #dce8e1;
+  vertical-align:middle;
+  text-align:center;
+}
+
+.loading-capacity-table th:first-child,
+.loading-capacity-table td:first-child{
+  border-left:1px solid #dce8e1;
+}
+
+.loading-capacity-table thead th{
+  border-top:1px solid #dce8e1;
+  background:#edf6f1;
+  color:#365c49;
+  font-size:9px;
+  font-weight:800;
+  line-height:1.25;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+
+.loading-capacity-table thead th:first-child{
+  border-top-left-radius:10px;
+}
+
+.loading-capacity-table thead th:last-child{
+  border-top-right-radius:10px;
+}
+
+.loading-capacity-table th small{
+  font-size:8px;
+  color:#7c8d84;
+}
+
+.loading-capacity-table input,
+.loading-capacity-table select{
+  min-width:0;
+  height:32px;
+  padding:5px 8px !important;
+  border-radius:8px !important;
+  font-size:10px !important;
+}
+
+.loading-capacity-table td:nth-child(1){min-width:105px}
+.loading-capacity-table td:nth-child(2){min-width:135px}
+.loading-capacity-table td:nth-child(3){min-width:95px}
+.loading-capacity-table td:nth-child(4){min-width:82px}
+.loading-capacity-table td:nth-child(5){min-width:120px}
+.loading-capacity-table td:nth-child(6){min-width:115px}
+.loading-capacity-table td:nth-child(7){min-width:125px}
+.loading-capacity-table td:nth-child(8){min-width:100px}
+
+.calculated-cell{
+  background:#fafcfb;
+  color:#385949;
+  font-weight:700;
+}
+
+.efficiency-low{
+  color:#a14b45;
+  background:#fdf1f0;
+  font-weight:800;
+}
+
+.efficiency-good{
+  color:#176b4d;
+  background:#edf8f2;
+}
+
+.efficiency-safe{
+  color:#5d6848;
+  background:#f7f8ed;
+}
+
+.efficiency-high{
+  color:#a14b45;
+  background:#fdf1f0;
+}
+
+.loading-remove-cell{
+  width:42px;
+}
+
+.loading-remove-btn{
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:8px;
+  background:#f8eaea;
+  color:#a64545;
+  font-size:16px;
+}
+
+.loading-empty-row{
+  padding:24px !important;
+  color:var(--muted);
+  background:#fbfcfb;
+}
+
+.loading-capacity-table tfoot th{
+  background:#f4f8f6;
+  color:#3f6251;
+  font-size:10px;
+}
+
+.loading-modal-footer{
+  position:sticky;
+  bottom:0;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 18px 14px;
+  border-top:1px solid var(--line);
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(8px);
+}
+
+.loading-modal-footer>small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.loading-modal-footer>div{
+  display:flex;
+  gap:8px;
+}
+
+@media(max-width:760px){
+  .loading-summary-strip{
+    grid-template-columns:1fr;
+  }
+
+  .loading-toolbar,
+  .excel-paste-actions,
+  .loading-modal-footer{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .loading-toolbar-actions,
+  .loading-modal-footer>div{
+    width:100%;
+  }
+
+  .loading-toolbar-actions button,
+  .loading-modal-footer button{
+    flex:1;
+  }
+}
+
+/* ============================================================
+   unmistakable loading table drill-down
+   ============================================================ */
+.section-row-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.section-open-table-btn{
+  border:1px solid #b8d8c8;
+  border-radius:9px;
+  background:#fff;
+  color:#176b4d;
+  padding:6px 9px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+.section-open-table-btn:hover{
+  background:#eaf5ef;
+}
+
+.loading-summary-trigger{
+  min-height:44px !important;
+  padding:8px 10px 8px 12px !important;
+  background:linear-gradient(180deg,#fbfdfc,#f3f9f6) !important;
+  border-color:#bcd8ca !important;
+}
+
+.loading-summary-main{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  min-width:0;
+}
+
+.loading-summary-value{
+  font-size:13px !important;
+}
+
+.loading-summary-caption{
+  color:#87978f;
+  font-size:9px;
+  font-weight:500;
+}
+
+.loading-summary-action{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 8px;
+  border-radius:8px;
+  background:#e2f1e9;
+  color:#176b4d !important;
+  font-size:10px !important;
+}
+
+.loading-summary-action strong{
+  font-size:12px;
+}
+
+.excel-paste-panel{
+  box-shadow:inset 0 0 0 1px rgba(23,107,77,.02);
+}
+
+.loading-capacity-table tbody tr:hover td{
+  background:#fbfdfc;
+}
+
+.loading-capacity-table tbody tr:hover .calculated-cell{
+  background:#f3f8f5;
+}
+
+/* ============================================================
+   Management capacity reference + clearer Excel paste guide
+   ============================================================ */
+.management-reference-cell strong,
+.management-reference-cell small{
+  display:block;
+}
+
+.management-reference-cell strong{
+  color:#315945;
+  font-size:10px;
+}
+
+.management-reference-cell small{
+  margin-top:2px;
+  color:#819189;
+  font-size:8px;
+  font-weight:600;
+}
+
+/* ============================================================
+   compact Excel paste panel
+   ============================================================ */
+.excel-paste-panel{
+  padding:10px 12px !important;
+}
+
+.excel-paste-head{
+  margin-bottom:6px !important;
+}
+
+.excel-paste-input{
+  min-height:82px !important;
+}
+
+/* remove redundant Excel paste label */
+.excel-paste-input{
+  margin-top:6px !important;
+}
+
+/* ============================================================
+   drawing folders grouped by revision
+   ============================================================ */
+.drawing-folder-upload-row{
+  display:grid;
+  grid-template-columns:minmax(210px,.7fr) minmax(280px,1.3fr);
+  gap:10px;
+  align-items:center;
+}
+
+.drawing-folder-upload-row>input[type="file"]{
+  width:100%;
+  min-width:0;
+}
+
+.drawing-folder-card{
+  width:100%;
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr) auto;
+  align-items:center;
+  gap:9px;
+  min-height:46px;
+  padding:8px 10px;
+  border:1px solid #cfe0d7;
+  border-radius:11px;
+  background:linear-gradient(180deg,#fbfdfc,#f5faf7);
+  color:var(--text);
+  text-align:left;
+}
+
+.drawing-folder-card:hover{
+  border-color:#8db6a1;
+  background:#eff7f3;
+}
+
+.drawing-folder-icon{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:#e6f2ec;
+  color:#176b4d;
+  font-size:15px;
+  font-weight:800;
+}
+
+.drawing-folder-copy{
+  min-width:0;
+}
+
+.drawing-folder-copy strong,
+.drawing-folder-copy small{
+  display:block;
+}
+
+.drawing-folder-copy strong{
+  color:#274b39;
+  font-size:11px;
+}
+
+.drawing-folder-copy small{
+  margin-top:2px;
+  overflow:hidden;
+  color:#7b8d84;
+  font-size:9px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.drawing-folder-open{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  color:#176b4d;
+  font-size:9px;
+  font-weight:800;
+}
+
+.drawing-folder-open strong{
+  font-size:12px;
+}
+
+.drawing-folder-modal{
+  width:min(900px,calc(100vw - 30px));
+  max-height:calc(100vh - 40px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #cedfd6;
+  border-radius:18px;
+  box-shadow:0 28px 70px rgba(19,50,37,.22);
+}
+
+.drawing-folder-modal-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  padding:15px 17px 12px;
+  border-bottom:1px solid var(--line);
+}
+
+.drawing-folder-modal-head h2{
+  margin:0 0 3px;
+  font-size:21px;
+  letter-spacing:-.03em;
+}
+
+.drawing-folder-modal-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.drawing-folder-modal-body{
+  flex:1;
+  overflow:auto;
+  padding:12px 16px;
+  background:#fafcfb;
+}
+
+.drawing-revision-group{
+  margin-bottom:11px;
+  overflow:hidden;
+  border:1px solid #d8e5de;
+  border-radius:12px;
+  background:#fff;
+}
+
+.drawing-revision-group:last-child{
+  margin-bottom:0;
+}
+
+.drawing-revision-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:9px 11px;
+  background:#eef6f2;
+  border-bottom:1px solid #d8e5de;
+}
+
+.drawing-revision-head strong{
+  color:#24503a;
+  font-size:11px;
+}
+
+.drawing-revision-head span{
+  color:#73867c;
+  font-size:9px;
+}
+
+.drawing-folder-file-list{
+  display:grid;
+}
+
+.drawing-folder-file-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 11px;
+  border-bottom:1px solid #edf2ef;
+}
+
+.drawing-folder-file-row:last-child{
+  border-bottom:none;
+}
+
+.drawing-folder-file-info{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-width:0;
+}
+
+.drawing-file-type{
+  min-width:37px;
+  padding:5px 6px;
+  border-radius:7px;
+  background:#edf4f0;
+  color:#4a6759;
+  font-size:8px;
+  font-weight:800;
+  text-align:center;
+}
+
+.drawing-folder-file-info>div{
+  min-width:0;
+}
+
+.drawing-folder-file-info strong,
+.drawing-folder-file-info small{
+  display:block;
+}
+
+.drawing-folder-file-info strong{
+  max-width:520px;
+  overflow:hidden;
+  color:#314f41;
+  font-size:10px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.drawing-folder-file-info small{
+  margin-top:2px;
+  color:#8a9891;
+  font-size:8px;
+}
+
+.drawing-folder-file-actions{
+  display:flex;
+  gap:6px;
+  flex:0 0 auto;
+}
+
+.drawing-open-file-btn,
+.drawing-folder-remove-btn{
+  border:none;
+  border-radius:8px;
+  padding:7px 9px;
+  font-size:9px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.drawing-open-file-btn{
+  background:#e6f3ec;
+  color:#176b4d;
+}
+
+.drawing-folder-remove-btn{
+  background:#f7eaea;
+  color:#9b4646;
+}
+
+.drawing-folder-empty{
+  min-height:180px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  text-align:center;
+  color:#7d8f85;
+}
+
+.drawing-folder-empty-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  margin-bottom:8px;
+  border-radius:14px;
+  background:#eaf4ef;
+  color:#176b4d;
+  font-size:18px;
+}
+
+.drawing-folder-empty strong{
+  color:#375746;
+  font-size:13px;
+}
+
+.drawing-folder-empty span{
+  margin-top:4px;
+  font-size:9px;
+}
+
+.drawing-folder-modal-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 16px 12px;
+  border-top:1px solid var(--line);
+  background:#fff;
+}
+
+.drawing-folder-modal-footer span{
+  color:#84938b;
+  font-size:9px;
+}
+
+@media(max-width:760px){
+  .drawing-folder-upload-row{
+    grid-template-columns:1fr;
+  }
+
+  .drawing-folder-file-row{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .drawing-folder-file-actions{
+    width:100%;
+  }
+
+  .drawing-folder-file-actions>*{
+    flex:1;
+    text-align:center;
+  }
+}
+
+/* ============================================================
+   Match Loading & Capacity summary sizing to Poundage
+   Preserve the Loading/Capacity green box treatment.
+   ============================================================ */
+.loading-summary-trigger{
+  min-height:34px !important;
+  padding:6px 9px !important;
+  border-radius:8px !important;
+  gap:9px !important;
+}
+
+.loading-summary-value{
+  font-size:10px !important;
+  font-weight:800;
+}
+
+.loading-summary-caption{
+  font-size:9px;
+  line-height:1.2;
+}
+
+.loading-summary-action{
+  gap:5px;
+  padding:4px 6px;
+  border-radius:7px;
+  font-size:10px !important;
+}
+
+.loading-summary-action strong{
+  font-size:11px;
+}
+
+/* summary rows stay highlighted but only the section-corner button opens the table */
+.loading-summary-static{
+  cursor:default !important;
+}
+
+.loading-summary-static:hover{
+  border-color:#bcd8ca !important;
+  background:linear-gradient(180deg,#fbfdfc,#f3f9f6) !important;
+}
+
+/* ============================================================
+   v47 consultant pile input: compact no-scroll desktop layout
+   ============================================================ */
+@media (min-width: 900px){
+  #loadingCapacityModal .loading-modal{
+    width:min(1080px,calc(100vw - 32px));
+  }
+
+  #loadingCapacityModal .loading-modal-head{
+    padding:13px 15px 10px;
+  }
+
+  #loadingCapacityModal .loading-summary-strip{
+    gap:6px;
+    padding:9px 15px 3px;
+  }
+
+  #loadingCapacityModal .loading-summary-strip>div{
+    padding:8px 10px;
+  }
+
+  #loadingCapacityModal .loading-toolbar{
+    gap:10px;
+    padding:9px 15px 8px;
+  }
+
+  #loadingCapacityModal .excel-paste-panel{
+    margin:0 15px 9px;
+    padding:10px;
+  }
+
+  #loadingCapacityModal .loading-table-wrap{
+    padding:0 15px;
+    overflow-x:hidden;
+  }
+
+  #loadingCapacityModal .loading-capacity-table{
+    width:100%;
+    min-width:0;
+    table-layout:fixed;
+    font-size:10px;
+  }
+
+  #loadingCapacityModal .loading-capacity-table th,
+  #loadingCapacityModal .loading-capacity-table td{
+    min-width:0 !important;
+    padding:5px 4px;
+  }
+
+  #loadingCapacityModal .loading-capacity-table thead th{
+    font-size:8px;
+    line-height:1.15;
+    letter-spacing:.015em;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+
+  #loadingCapacityModal .loading-capacity-table th small{
+    font-size:7px;
+  }
+
+  #loadingCapacityModal .loading-capacity-table input,
+  #loadingCapacityModal .loading-capacity-table select{
+    width:100%;
+    max-width:100%;
+    height:29px;
+    padding:4px 5px !important;
+    font-size:9px !important;
+  }
+
+  #loadingCapacityModal .loading-capacity-table th:nth-child(1),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(1){width:9%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(2),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(2){width:14%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(3),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(3){width:9%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(4),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(4){width:8%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(5),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(5){width:12%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(6),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(6){width:13%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(7),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(7){width:14%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(8),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(8){width:13%;}
+  #loadingCapacityModal .loading-capacity-table th:nth-child(9),
+  #loadingCapacityModal .loading-capacity-table td:nth-child(9){width:5%;}
+
+  #loadingCapacityModal .management-reference-cell small{
+    display:none;
+  }
+
+  #loadingCapacityModal .loading-remove-cell{
+    width:auto;
+  }
+
+  #loadingCapacityModal .loading-remove-btn{
+    width:25px;
+    height:25px;
+    border-radius:7px;
+    font-size:14px;
+  }
+
+  #loadingCapacityModal .loading-capacity-table tfoot th{
+    font-size:9px;
+    padding:6px 4px;
+  }
+
+  #loadingCapacityModal .loading-modal-footer{
+    padding:9px 15px 11px;
+  }
+}
+
+/* ============================================================
+   Excel paste info guide
+   ============================================================ */
+.excel-paste-head-copy{
+  min-width:0;
+}
+
+.excel-paste-title-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.info-icon-btn{
+  width:22px;
+  height:22px;
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 22px;
+  border:1px solid #c8dbd0;
+  border-radius:999px;
+  background:#ffffff;
+  color:#176b4d;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+  cursor:pointer;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;
+}
+
+.info-icon-btn:hover{
+  background:#eef7f2;
+  border-color:#8eb6a2;
+  transform:translateY(-1px);
+}
+
+.excel-guide-modal{
+  position:fixed;
+  inset:0;
+  z-index:2200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(18,33,26,.3);
+}
+
+.excel-guide-card{
+  width:min(760px, calc(100vw - 32px));
+  max-height:calc(100vh - 40px);
+  overflow:auto;
+  padding:18px;
+  border:1px solid #d6e3dc;
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow:0 24px 64px rgba(24, 54, 40, .18);
+}
+
+.excel-guide-card-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+
+.excel-guide-kicker{
+  margin:0 0 4px;
+  color:#5c7b6c;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.excel-guide-card-head h3{
+  margin:0;
+  color:#1f3f31;
+  font-size:20px;
+}
+
+.excel-guide-close{
+  flex-shrink:0;
+}
+
+.excel-guide-body{
+  display:grid;
+  grid-template-columns:minmax(220px,.9fr) minmax(260px,1.1fr);
+  gap:16px;
+  align-items:start;
+}
+
+.excel-guide-copy{
+  min-width:0;
+}
+
+.excel-guide-steps{
+  margin:0;
+  padding-left:18px;
+  color:#355545;
+  font-size:13px;
+  line-height:1.55;
+}
+
+.excel-guide-steps li+li{
+  margin-top:8px;
+}
+
+.excel-guide-image-wrap{
+  padding:10px;
+  border:1px solid #dce8e1;
+  border-radius:14px;
+  background:#fbfdfc;
+}
+
+.excel-guide-image{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:8px;
+}
+
+.excel-guide-footer{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:16px;
+}
+
+@media (max-width: 720px){
+  .excel-guide-card{
+    padding:16px;
+  }
+
+  .excel-guide-body{
+    grid-template-columns:1fr;
+  }
+}
+
+.excel-paste-actions-end{
+  justify-content:flex-end;
+}

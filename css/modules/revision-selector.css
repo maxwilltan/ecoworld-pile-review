@@ -1,0 +1,883 @@
+/* revision selector inside Internal comparison columns */
+.management-comparison-project-head-v118{
+  position:relative;
+}
+
+.management-revision-trigger-v118{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  max-width:100%;
+  margin:0;
+  padding:4px 7px;
+  border:1px solid #d8e5de;
+  border-radius:7px;
+  background:#f8fbf9;
+  color:#62756b;
+  font:inherit;
+  font-size:8.5px;
+  font-weight:700;
+  line-height:1.2;
+  cursor:pointer;
+}
+
+.management-revision-trigger-v118:hover{
+  border-color:#aacbbb;
+  background:#f2f8f5;
+  color:#315443;
+}
+
+.management-revision-trigger-v118:focus-visible{
+  outline:2px solid rgba(23,107,77,.20);
+  outline-offset:2px;
+}
+
+.management-revision-trigger-v118 > span:first-child{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.management-revision-chevron-v118{
+  flex:0 0 auto;
+  font-size:10px;
+  line-height:1;
+}
+
+.management-revision-popover-v118{
+  position:fixed;
+  z-index:20000;
+  padding:8px;
+  border:1px solid #d5e4dc;
+  border-radius:11px;
+  background:#fff;
+  box-shadow:0 16px 36px rgba(26,57,43,.18);
+}
+
+.management-revision-popover-v118.hidden{
+  display:none !important;
+}
+
+.management-revision-popover-head-v118{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:3px 4px 8px;
+  border-bottom:1px solid #edf2ef;
+}
+
+.management-revision-popover-head-v118 strong{
+  display:block;
+  color:#263b31;
+  font-size:11px;
+  line-height:1.2;
+}
+
+.management-revision-popover-head-v118 small{
+  display:block;
+  margin-top:2px;
+  color:#7b8a82;
+  font-size:8.5px;
+}
+
+.management-revision-popover-head-v118 > span{
+  flex:0 0 auto;
+  padding:3px 6px;
+  border-radius:999px;
+  background:#eef6f2;
+  color:#276247;
+  font-size:8.5px;
+  font-weight:800;
+}
+
+.management-revision-options-v118{
+  display:grid;
+  gap:4px;
+  max-height:235px;
+  padding-top:6px;
+  overflow:auto;
+}
+
+.management-revision-option-v118{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:32px;
+  padding:7px 8px;
+  border:1px solid transparent;
+  border-radius:8px;
+  color:#354a40;
+  font-size:9.5px;
+  font-weight:650;
+  cursor:pointer;
+  user-select:none;
+}
+
+.management-revision-option-v118:hover,
+.management-revision-option-v118.selected{
+  border-color:#cde0d6;
+  background:#f4f9f6;
+}
+
+.management-revision-option-v118.limit-disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.management-revision-option-v118 input[type="checkbox"]{
+  width:15px;
+  height:15px;
+  margin:0;
+  accent-color:#176b4d;
+}
+
+.management-revision-option-v118 span{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Group project headers across selected revisions */
+#managementOverviewView .management-comparison-project-group-row th{
+  vertical-align:middle;
+  text-align:center;
+}
+
+#managementOverviewView .management-comparison-project-group-head{
+  padding-top:8px !important;
+  padding-bottom:7px !important;
+  background:#edf6f1 !important;
+  color:#315443 !important;
+}
+
+#managementOverviewView .management-comparison-project-group-head strong{
+  display:block;
+  font-size:11px !important;
+  font-weight:800;
+  line-height:1.25;
+  text-align:center;
+}
+
+#managementOverviewView .management-comparison-revision-row th{
+  padding-top:5px !important;
+  padding-bottom:6px !important;
+  background:#f6faf8 !important;
+  text-align:center;
+}
+
+#managementOverviewView .management-comparison-revision-head .management-revision-trigger-v118{
+  margin:0 auto;
+}
+
+/* Project boundaries are drawn as one continuous overlay line by JS.
+   Keep the normal cell borders thin so revision dividers remain unchanged. */
+#managementOverviewView .management-comparison-table .management-project-group-start,
+#managementOverviewView .management-comparison-project-group-head.management-project-group-start{
+  border-left-width:1px !important;
+}
+
+#managementOverviewView .management-comparison-table-wrap{
+  position:relative;
+}
+
+#managementOverviewView .management-project-separator-line{
+  position:absolute;
+  width:3px;
+  background:#8eafa0;
+  z-index:8;
+  pointer-events:none;
+  transform:translateX(-1.5px);
+}
+
+#managementOverviewView .management-comparison-item-head{
+  vertical-align:middle !important;
+}
+
+/* visible outer perimeter matching the internal grid line */
+#managementOverviewView #managementComparisonTable{
+  border:0 !important;
+  outline:1px solid #dce7e1 !important;
+  outline-offset:-1px !important;
+  box-shadow:inset 0 0 0 1px #dce7e1 !important;
+}
+
+/* explicit continuous outer frame for the comparison table */
+#managementOverviewView .management-table-outline-frame{
+  position:absolute;
+  box-sizing:border-box;
+  border:1px solid #dce7e1;
+  z-index:7;
+  pointer-events:none;
+}
+
+/* clearly visible thin outer table boundary only */
+#managementOverviewView #managementComparisonTable{
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
+
+#managementOverviewView #managementComparisonTable thead tr:first-child > th{
+  border-top:1px solid #b9cec4 !important;
+}
+
+#managementOverviewView #managementComparisonTable tr > :first-child{
+  border-left:1px solid #b9cec4 !important;
+}
+
+#managementOverviewView #managementComparisonTable tr > :last-child{
+  border-right:1px solid #b9cec4 !important;
+}
+
+#managementOverviewView #managementComparisonTable tbody tr:last-child > td{
+  border-bottom:1px solid #b9cec4 !important;
+}
+
+/* The outer boundary is now drawn by the actual edge cells. */
+#managementOverviewView .management-table-outline-frame{
+  display:none !important;
+}
+
+/* left-align the single-project comparison view */
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head strong,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-revision-row th,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child){
+  text-align:left !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-revision-row th,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child){
+  padding-left:14px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-revision-head .management-revision-trigger-v118{
+  margin-left:0 !important;
+  margin-right:auto !important;
+}
+
+/* compact single-project comparison card/table aligned together */
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card{
+  width:min(860px, calc(100% - 32px)) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card .management-comparison-head,
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card .management-comparison-table-wrap{
+  width:100% !important;
+  max-width:100% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* Keep the Filters popover only as wide as its actual content. */
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card #managementComparisonFilters{
+  width:max-content !important;
+  max-width:calc(100% - 16px) !important;
+  left:auto !important;
+  right:8px !important;
+  margin:0 !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card #managementComparisonFilters .comparison-filter-selector-panel{
+  width:max-content !important;
+  max-width:100% !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card #managementComparisonFilters .comparison-filter-columns{
+  width:max-content !important;
+  grid-template-columns:max-content max-content max-content !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card .management-comparison-head{
+  padding:14px 16px 6px !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card .management-comparison-head h2{
+  font-size:18px !important;
+}
+
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card .management-comparison-head small{
+  font-size:10px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view{
+  width:100% !important;
+  min-width:0 !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  font-size:12px !important;
+}
+
+/* Keep the original centered comparison alignment for the project column. */
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head strong,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-revision-row th,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child){
+  text-align:center !important;
+  padding-left:9px !important;
+  padding-right:9px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-revision-head .management-revision-trigger-v118{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Make the focused single-project view easier to read. */
+#managementOverviewView .management-comparison-table.management-single-column-view th,
+#managementOverviewView .management-comparison-table.management-single-column-view td,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:first-child span,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child),
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child) span,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child) strong{
+  line-height:1.4 !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-revision-trigger-v118{
+  font-size:11px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .comparison-poundage-guide-text,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:first-child .comparison-poundage-guide-text{
+  font-size:10px !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card{
+    width:calc(100% - 16px) !important;
+  }
+
+  #managementOverviewView .management-comparison-table.management-single-column-view{
+    width:100% !important;
+  }
+}
+
+/* widen single-project compact view and give the Item column more room */
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card{
+  width:min(980px, calc(100% - 32px)) !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+  width:290px !important;
+  min-width:290px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view th,
+#managementOverviewView .management-comparison-table.management-single-column-view td{
+  padding:9px 10px !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+  #managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+    width:250px !important;
+    min-width:250px !important;
+  }
+}
+
+/* dedicated Guide column for Poundage ranges */
+#managementOverviewView .management-comparison-table .management-comparison-guide-head,
+#managementOverviewView .management-comparison-table .management-comparison-guide-cell{
+  width:130px !important;
+  min-width:130px !important;
+  max-width:130px !important;
+  text-align:center !important;
+  border-left:1px solid #dce7e1 !important;
+  border-right:1px solid #dce7e1 !important;
+}
+
+#managementOverviewView .management-comparison-table .management-comparison-guide-head{
+  vertical-align:middle !important;
+  font-weight:800 !important;
+  color:#345845 !important;
+  background:#edf6f1 !important;
+}
+
+#managementOverviewView .management-comparison-table .management-comparison-guide-cell{
+  color:#60756a !important;
+  background:#fbfcfb !important;
+}
+
+#managementOverviewView .management-comparison-table .management-comparison-guide-cell .comparison-poundage-guide-text{
+  display:inline-block !important;
+  margin:0 !important;
+  font-size:inherit !important;
+  line-height:1.25 !important;
+  color:#60756a !important;
+  white-space:normal !important;
+}
+
+/* The Item / Guide split stays a normal thin grid line. */
+#managementOverviewView .management-comparison-table th:first-child,
+#managementOverviewView .management-comparison-table td:first-child{
+  border-right:1px solid #dce7e1 !important;
+}
+
+/* In single-column mode keep enough room for Item + Guide without crowding. */
+#managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+  width:300px !important;
+  min-width:300px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-guide-head,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-guide-cell{
+  width:135px !important;
+  min-width:135px !important;
+  max-width:135px !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table .management-comparison-guide-head,
+  #managementOverviewView .management-comparison-table .management-comparison-guide-cell{
+    width:110px !important;
+    min-width:110px !important;
+    max-width:110px !important;
+  }
+}
+
+/* only separate Guide inside Poundage item cells, not as a global table column */
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1fr) 1px 118px !important;
+  align-items:stretch !important;
+  column-gap:10px !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-divider{
+  display:block !important;
+  width:1px !important;
+  background:#dce7e1 !important;
+  align-self:stretch !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide-col{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  gap:2px !important;
+  min-width:0 !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide-head{
+  display:block !important;
+  margin:0 !important;
+  font-size:9px !important;
+  line-height:1.1 !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  color:#60756a !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide:not(.comparison-poundage-inline-guide-first) .comparison-poundage-inline-guide-head{
+  display:none !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide .comparison-poundage-guide-text{
+  display:block !important;
+  margin:0 !important;
+  font-size:10px !important;
+  line-height:1.25 !important;
+  color:#60756a !important;
+  white-space:normal !important;
+}
+
+/* Neutralize the old dedicated Guide column styling from V14. */
+#managementOverviewView .management-comparison-table .management-comparison-guide-head,
+#managementOverviewView .management-comparison-table .management-comparison-guide-cell{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table .comparison-poundage-inline-guide{
+    grid-template-columns:minmax(0, 1fr) 1px 98px !important;
+    column-gap:8px !important;
+  }
+}
+
+/* show Guide beside the Poundage section title instead of inside the first row */
+.management-poundage-section-title-with-guide{
+  display:inline-grid !important;
+  grid-template-columns:auto auto !important;
+  align-items:center !important;
+  column-gap:10px !important;
+}
+
+.management-poundage-section-title-main{
+  display:inline-block !important;
+}
+
+.management-poundage-section-title-guide{
+  display:inline-block !important;
+  padding-left:10px !important;
+  border-left:1px solid #dce7e1 !important;
+  font-size:10px !important;
+  line-height:1.1 !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  color:#60756a !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide-col{
+  justify-content:center !important;
+}
+
+#managementOverviewView .management-comparison-table .comparison-poundage-inline-guide-head{
+  display:none !important;
+}
+
+/* make Poundage guide divider a full-height straight vertical line */
+#managementOverviewView .management-comparison-table td.management-poundage-item-cell{
+  padding:0 !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:minmax(0, 1fr) 118px !important;
+  column-gap:0 !important;
+  align-items:stretch !important;
+  min-height:100% !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-divider{
+  display:none !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-label{
+  display:flex !important;
+  align-items:center !important;
+  min-height:100% !important;
+  padding:10px 14px !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  min-height:100% !important;
+  padding:10px 14px !important;
+  border-left:1px solid #dce7e1 !important;
+  box-sizing:border-box !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide{
+    grid-template-columns:minmax(0, 1fr) 98px !important;
+  }
+}
+
+/* align the Poundage section header split with the guide split below */
+.management-poundage-section-title-with-guide{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1fr) 118px !important;
+  align-items:stretch !important;
+  width:22% !important;
+  min-width:230px !important;
+  max-width:100% !important;
+  column-gap:0 !important;
+}
+
+.management-poundage-section-title-main{
+  display:flex !important;
+  align-items:center !important;
+  min-height:100% !important;
+  padding-right:14px !important;
+}
+
+.management-poundage-section-title-guide{
+  display:flex !important;
+  align-items:center !important;
+  min-height:100% !important;
+  padding:0 0 0 14px !important;
+  border-left:1px solid #dce7e1 !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+  width:290px !important;
+  min-width:290px !important;
+}
+
+@media(max-width:900px){
+  .management-poundage-section-title-with-guide{
+    grid-template-columns:minmax(0, 1fr) 98px !important;
+    min-width:210px !important;
+  }
+
+  #managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+    width:250px !important;
+    min-width:250px !important;
+  }
+}
+
+/* one uninterrupted Guide divider across the entire Poundage block */
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col,
+#managementOverviewView .management-comparison-table .management-poundage-section-title-guide{
+  border-left:0 !important;
+}
+
+#managementOverviewView .management-poundage-guide-separator-line{
+  position:absolute;
+  width:1px;
+  background:#dce7e1;
+  z-index:9;
+  pointer-events:none;
+  transform:translateX(-.5px);
+}
+
+/* poundage guide values unitless; slab BRC/rebar stacked */
+#managementOverviewView .management-comparison-table .comparison-poundage-guide-text{
+  white-space:pre-line !important;
+}
+
+.management-poundage-section-title-guide{
+  white-space:nowrap !important;
+}
+
+/* force slab BRC/rebar guide onto separate lines inside the Poundage guide cell */
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col .comparison-poundage-guide-text{
+  display:block !important;
+  white-space:pre-line !important;
+  line-height:1.3 !important;
+}
+
+/* shift the Item/Project separator right in single-project mode so Guide has more room */
+#managementOverviewView #managementCombinedComparisonCardV101.management-single-column-card{
+  width:min(1040px, calc(100% - 32px)) !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+  width:340px !important;
+  min-width:340px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+  width:340px !important;
+  min-width:340px !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+  #managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+    width:270px !important;
+    min-width:270px !important;
+  }
+
+  #managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+    width:270px !important;
+    min-width:270px !important;
+  }
+}
+
+/* fix single-project Poundage guide spacing without moving anything else */
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide{
+  grid-template-columns:minmax(0, 1fr) 160px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+  grid-template-columns:minmax(0, 1fr) 160px !important;
+  width:360px !important;
+  min-width:360px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+  width:360px !important;
+  min-width:360px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-guide{
+  justify-content:flex-start !important;
+  padding-left:14px !important;
+  padding-right:10px !important;
+  font-size:9.5px !important;
+  letter-spacing:.04em !important;
+  white-space:nowrap !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  padding-left:14px !important;
+  padding-right:10px !important;
+}
+
+@media(max-width:900px){
+  #managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide{
+    grid-template-columns:minmax(0, 1fr) 135px !important;
+  }
+
+  #managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide,
+  #managementOverviewView .management-comparison-table.management-single-column-view th:first-child,
+  #managementOverviewView .management-comparison-table.management-single-column-view td:first-child{
+    width:310px !important;
+    min-width:310px !important;
+  }
+
+  #managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide{
+    grid-template-columns:minmax(0, 1fr) 135px !important;
+  }
+}
+
+/* make Guide (kg/m³) smaller and softer than the Poundage title */
+#managementOverviewView .management-comparison-table .management-poundage-section-title-guide{
+  font-size:8.5px !important;
+  line-height:1.1 !important;
+  font-weight:600 !important;
+  letter-spacing:.03em !important;
+  color:#809288 !important;
+  opacity:.9 !important;
+  text-transform:uppercase !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-guide{
+  font-size:8.5px !important;
+  font-weight:600 !important;
+  letter-spacing:.03em !important;
+  color:#809288 !important;
+  opacity:.9 !important;
+}
+
+/* center-align all Poundage guide values */
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  align-items:center !important;
+  text-align:center !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col .comparison-poundage-guide-text{
+  width:100% !important;
+  text-align:center !important;
+}
+
+/* lock Guide header and values to the exact same horizontal centerline */
+#managementOverviewView .management-comparison-table .management-poundage-section-title-guide,
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  padding-left:0 !important;
+  padding-right:0 !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-section-title-guide{
+  width:100% !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-inline-guide-col .comparison-poundage-guide-text{
+  display:block !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  text-align:center !important;
+  white-space:pre-line !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-guide,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+/* exact single-project alignment for Poundage Guide header + values */
+#managementOverviewView .management-comparison-table tbody .management-comparison-section-row[data-management-section-label^="Poundage"] > td{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-section-title-with-guide{
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-section-title-main{
+  padding-left:14px !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide{
+  grid-template-columns:minmax(0, 1fr) 120px !important;
+}
+
+#managementOverviewView .management-comparison-table .management-poundage-item-cell .comparison-poundage-label{
+  white-space:nowrap !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-with-guide,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell{
+  width:360px !important;
+  min-width:360px !important;
+  max-width:360px !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-guide,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide-col{
+  width:120px !important;
+  min-width:120px !important;
+  max-width:120px !important;
+  box-sizing:border-box !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+}
+
+/* optical centering for single-project Poundage Guide */
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-section-title-guide,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-poundage-item-cell .comparison-poundage-inline-guide-col .comparison-poundage-guide-text{
+  transform:translateX(-4px) !important;
+}
+
+/* optical centering for multi-project Poundage Guide only */
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-poundage-section-title-guide,
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-poundage-item-cell .comparison-poundage-inline-guide-col .comparison-poundage-guide-text{
+  transform:translateX(-3px) !important;
+}
+
+/* Reserve room for single-line Poundage labels beside the multi-project guide. */
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-comparison-item-head,
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) tbody tr:not(.management-comparison-section-row) > td:first-child,
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-poundage-section-title-with-guide{
+  width:320px !important;
+  min-width:320px !important;
+  box-sizing:border-box !important;
+}
+
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-poundage-section-title-with-guide,
+#managementOverviewView .management-comparison-table:not(.management-single-column-view) .management-poundage-item-cell .comparison-poundage-inline-guide{
+  grid-template-columns:minmax(0, 1fr) 118px !important;
+}
+
+/* slightly reduce typography in the focused single-project comparison view */
+#managementOverviewView .management-comparison-table.management-single-column-view th,
+#managementOverviewView .management-comparison-table.management-single-column-view td,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:first-child,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:first-child span,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child),
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child) span,
+#managementOverviewView .management-comparison-table.management-single-column-view tbody td:not(:first-child) strong{
+  font-size:12px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-project-group-head strong{
+  font-size:14px !important;
+}
+
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-section-row td,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-section-row td span,
+#managementOverviewView .management-comparison-table.management-single-column-view .management-comparison-section-row td strong{
+  font-size:11px !important;
+}

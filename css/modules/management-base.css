@@ -1,0 +1,912 @@
+/* ============================================================
+   submission locked until a project is selected
+   ============================================================ */
+.submission-lock-notice{
+  margin:12px 18px 0;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 11px;
+  border:1px solid #d8e4de;
+  border-radius:11px;
+  background:#f7faf8;
+  color:#61756b;
+}
+
+.submission-lock-icon{
+  width:28px;
+  height:28px;
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:#e9f1ed;
+  color:#567267;
+  font-size:12px;
+}
+
+.submission-lock-notice strong,
+.submission-lock-notice small{
+  display:block;
+}
+
+.submission-lock-notice strong{
+  color:#365346;
+  font-size:11px;
+}
+
+.submission-lock-notice small{
+  margin-top:2px;
+  color:#7e8e86;
+  font-size:9px;
+}
+
+.submission-locked .overview-table{
+  opacity:.58;
+}
+
+.submission-locked .overview-table input,
+.submission-locked .overview-table select,
+.submission-locked .overview-table textarea,
+.submission-locked .overview-table button{
+  cursor:not-allowed !important;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled{
+  cursor:not-allowed !important;
+  opacity:.55;
+}
+
+/* ============================================================
+   Management workspace
+   ============================================================ */
+.management-stat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.management-stat-card{
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 7px 18px rgba(21,54,40,.05);
+}
+
+.management-stat-card span,
+.management-stat-card strong{
+  display:block;
+}
+
+.management-stat-card span{
+  color:var(--muted);
+  font-size:9px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.management-stat-card strong{
+  margin-top:4px;
+  color:#264b38;
+  font-size:20px;
+  letter-spacing:-.03em;
+}
+
+.management-overview-filter{
+  margin-bottom:12px !important;
+}
+
+.management-filter-grid{
+  display:grid;
+  grid-template-columns:1.5fr .8fr .8fr;
+  gap:10px;
+}
+
+.management-submission-list{
+  display:grid;
+  gap:10px;
+}
+
+.management-submission-card{
+  display:flex;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 8px 22px rgba(21,54,40,.05);
+}
+
+.management-submission-main{
+  flex:1;
+  min-width:0;
+}
+
+.management-submission-title-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.management-submission-title-row h3{
+  margin:0 0 7px;
+  font-size:18px;
+  letter-spacing:-.025em;
+}
+
+.management-submission-date{
+  color:#87958e;
+  font-size:9px;
+  white-space:nowrap;
+}
+
+.management-submission-info-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-top:11px;
+}
+
+.management-submission-info-grid>div{
+  padding:8px 9px;
+  border-radius:10px;
+  background:#f7faf8;
+  border:1px solid #e0e9e4;
+}
+
+.management-submission-info-grid span,
+.management-submission-info-grid strong{
+  display:block;
+}
+
+.management-submission-info-grid span{
+  color:#87958e;
+  font-size:8px;
+}
+
+.management-submission-info-grid strong{
+  margin-top:2px;
+  color:#385646;
+  font-size:10px;
+}
+
+.management-submission-actions{
+  width:145px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:7px;
+}
+
+.management-submission-actions button{
+  width:100%;
+}
+
+.management-page-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+/* Comparison */
+.management-comparison-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  padding:15px 17px 4px;
+}
+
+.management-comparison-head h2{
+  margin:0 0 3px;
+  font-size:20px;
+}
+
+.management-comparison-head small{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.management-future-filter-note{
+  padding:7px 10px;
+  border:1px dashed #cfdcd5;
+  border-radius:9px;
+  color:#89968f;
+  font-size:9px;
+  background:#fafcfb;
+}
+
+.management-comparison-slots{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:7px;
+  padding:11px 16px 13px;
+}
+
+.management-comparison-slot{
+  position:relative;
+  padding:9px;
+  border:1px solid #dbe6e0;
+  border-radius:12px;
+  background:#fafcfb;
+}
+
+.management-comparison-slot-number{
+  position:absolute;
+  top:7px;
+  right:7px;
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e6f2ec;
+  color:#176b4d;
+  font-size:8px;
+  font-weight:800;
+}
+
+.management-comparison-slot .field-group{
+  margin-bottom:7px;
+}
+
+.management-comparison-slot .field-group:last-child{
+  margin-bottom:0;
+}
+
+.management-comparison-slot label{
+  font-size:9px;
+}
+
+.management-comparison-slot select{
+  padding:8px 27px 8px 8px !important;
+  font-size:9px !important;
+}
+
+.management-comparison-table-wrap{
+  padding:0 16px 16px;
+  overflow:auto;
+}
+
+.management-comparison-empty{
+  min-height:150px;
+  display:grid;
+  place-items:center;
+  color:#85948c;
+  font-size:11px;
+  border:1px dashed #d6e1db;
+  border-radius:12px;
+  background:#fbfcfb;
+}
+
+.management-comparison-table{
+  width:100%;
+  min-width:980px;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:9px;
+}
+
+.management-comparison-table th,
+.management-comparison-table td{
+  padding:8px 9px;
+  border-right:1px solid #dce7e1;
+  border-bottom:1px solid #dce7e1;
+  text-align:center;
+}
+
+.management-comparison-table th:first-child,
+.management-comparison-table td:first-child{
+  border-left:1px solid #dce7e1;
+  text-align:left;
+  min-width:220px;
+}
+
+.management-comparison-table thead th{
+  border-top:1px solid #dce7e1;
+  background:#edf6f1;
+  color:#345845;
+}
+
+.management-comparison-table thead th strong,
+.management-comparison-table thead th small{
+  display:block;
+}
+
+.management-comparison-table thead th small{
+  margin-top:2px;
+  color:#7c8d84;
+}
+
+.management-comparison-section-row td{
+  background:#f7faf8 !important;
+  color:#176b4d;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.management-comparison-table td.comparison-different{
+  background:#fff9eb;
+}
+
+/* Settings */
+.management-settings-list{
+  display:grid;
+  gap:10px;
+}
+
+.management-setting-section{
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.management-setting-section-head{
+  display:grid;
+  grid-template-columns:120px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  padding:10px 12px;
+  background:#f4f9f6;
+  border-bottom:1px solid var(--line);
+}
+
+.management-setting-toggle{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#4b6558;
+  font-size:9px;
+  font-weight:700;
+}
+
+.management-setting-toggle input{
+  width:15px;
+  height:15px;
+}
+
+.management-setting-section-title{
+  padding:8px 10px !important;
+  font-weight:800;
+  color:#315443;
+}
+
+.management-setting-row-list{
+  display:grid;
+}
+
+.management-setting-row{
+  display:grid;
+  grid-template-columns:100px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  padding:8px 12px;
+  border-bottom:1px solid #edf2ef;
+}
+
+.management-setting-row:last-child{
+  border-bottom:none;
+}
+
+.management-setting-row>div{
+  display:grid;
+  grid-template-columns:130px minmax(0,1fr);
+  gap:8px;
+  align-items:center;
+}
+
+.management-setting-row small{
+  color:#87958d;
+  font-size:8px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.management-setting-row input[type="text"]{
+  padding:8px 10px !important;
+  font-size:10px !important;
+}
+
+/* Pile Reference */
+.management-reference-note{
+  margin:13px 15px 0;
+  padding:9px 10px;
+  border-radius:10px;
+  background:#f2f8f5;
+  color:#647a6f;
+  font-size:9px;
+}
+
+.management-reference-wrap{
+  padding:10px 15px 15px;
+  overflow:auto;
+}
+
+.management-reference-table{
+  width:100%;
+  min-width:760px;
+  border-collapse:separate;
+  border-spacing:0;
+}
+
+.management-reference-table th,
+.management-reference-table td{
+  padding:7px;
+  border-right:1px solid #dce7e1;
+  border-bottom:1px solid #dce7e1;
+}
+
+.management-reference-table th:first-child,
+.management-reference-table td:first-child{
+  border-left:1px solid #dce7e1;
+}
+
+.management-reference-table thead th{
+  border-top:1px solid #dce7e1;
+  background:#edf6f1;
+  color:#3b5d4d;
+  font-size:9px;
+}
+
+.management-reference-table input{
+  height:32px;
+  padding:5px 8px !important;
+  border-radius:8px !important;
+  font-size:9px !important;
+}
+
+.management-table-delete-btn{
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:8px;
+  background:#f7eaea;
+  color:#9b4646;
+}
+
+/* Management submission modal */
+.management-submission-modal,
+.management-pile-modal{
+  width:min(1100px,calc(100vw - 28px));
+  max-height:calc(100vh - 34px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid #ccddd4;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 26px 70px rgba(20,50,37,.22);
+}
+
+.management-pile-modal{
+  width:min(1500px,calc(100vw - 18px));
+}
+
+.management-modal-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 16px 11px;
+  border-bottom:1px solid var(--line);
+}
+
+.management-modal-head h2{
+  margin:0 0 3px;
+  font-size:21px;
+}
+
+.management-modal-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.management-submission-modal-body{
+  flex:1;
+  overflow:auto;
+  padding:12px 15px;
+  background:#fafcfb;
+}
+
+.management-review-section{
+  margin-bottom:10px;
+  border:1px solid #dce7e1;
+  border-radius:11px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.management-review-section h3{
+  margin:0;
+  padding:8px 10px;
+  background:#eef6f2;
+  color:#315442;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.management-review-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.management-review-row{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:8px;
+  padding:8px 10px;
+  border-right:1px solid #edf2ef;
+  border-bottom:1px solid #edf2ef;
+}
+
+.management-review-row span{
+  color:#74867d;
+  font-size:9px;
+}
+
+.management-review-row strong{
+  color:#365646;
+  font-size:9px;
+  text-align:right;
+}
+
+.management-modal-footer{
+  display:flex;
+  justify-content:flex-end;
+  padding:10px 15px 12px;
+  border-top:1px solid var(--line);
+  background:#fff;
+}
+
+.management-modal-footer.split{
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.management-modal-footer.split small{
+  color:#829189;
+  font-size:9px;
+}
+
+.management-modal-footer.split>div{
+  display:flex;
+  gap:7px;
+}
+
+/* Internal pile check */
+.management-pile-summary{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  padding:11px 14px 5px;
+}
+
+.management-pile-summary>div{
+  padding:10px 11px;
+  border:1px solid #d8e5de;
+  border-radius:11px;
+  background:#f8fbf9;
+}
+
+.management-pile-summary span,
+.management-pile-summary strong,
+.management-pile-summary small{
+  display:block;
+}
+
+.management-pile-summary span{
+  color:#75877d;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.management-pile-summary strong{
+  margin-top:3px;
+  color:#214d38;
+  font-size:16px;
+}
+
+.management-pile-summary small{
+  margin-top:2px;
+  color:#85948c;
+  font-size:8px;
+}
+
+.management-pile-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 14px;
+}
+
+.management-pile-toolbar strong,
+.management-pile-toolbar small{
+  display:block;
+}
+
+.management-pile-toolbar strong{
+  font-size:11px;
+}
+
+.management-pile-toolbar small{
+  margin-top:2px;
+  color:#829189;
+  font-size:9px;
+}
+
+.management-pile-table-wrap{
+  flex:1;
+  overflow:auto;
+  padding:0 14px 10px;
+}
+
+.management-pile-table{
+  width:100%;
+  min-width:1150px;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:8px;
+}
+
+.management-pile-table th,
+.management-pile-table td{
+  padding:6px 5px;
+  border-right:1px solid #dce7e1;
+  border-bottom:1px solid #dce7e1;
+  text-align:center;
+}
+
+.management-pile-table th:first-child,
+.management-pile-table td:first-child{
+  border-left:1px solid #dce7e1;
+}
+
+.management-pile-table thead th{
+  border-top:1px solid #dce7e1;
+  background:#edf6f1;
+  color:#365947;
+  font-size:8px;
+}
+
+.management-pile-table th small{
+  font-size:7px;
+  color:#7c8d84;
+}
+
+.management-pile-table select,
+.management-pile-table input{
+  height:29px;
+  min-width:80px;
+  padding:4px 23px 4px 6px !important;
+  border-radius:7px !important;
+  font-size:8px !important;
+}
+
+.management-row-auto-btn{
+  border:none;
+  border-radius:7px;
+  padding:6px 8px;
+  background:#e6f2ec;
+  color:#176b4d;
+  font-size:8px;
+  font-weight:800;
+}
+
+.management-pile-empty{
+  padding:24px !important;
+  color:#829189;
+}
+
+/* Consultant proposal display */
+.proposal-list-mode{
+  min-height:0 !important;
+  display:grid !important;
+  gap:10px;
+  padding:12px !important;
+  text-align:left !important;
+}
+
+.consultant-proposal-card{
+  width:100%;
+  padding:13px;
+  border:1px solid #d9e5df;
+  border-radius:14px;
+  background:#fff;
+}
+
+.consultant-proposal-card-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.consultant-proposal-card-head strong,
+.consultant-proposal-card-head small{
+  display:block;
+}
+
+.consultant-proposal-card-head strong{
+  color:#2f523f;
+  font-size:13px;
+}
+
+.consultant-proposal-card-head small,
+.consultant-proposal-card-head>span{
+  margin-top:2px;
+  color:#87958e;
+  font-size:9px;
+}
+
+.consultant-proposal-stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+  margin-top:10px;
+}
+
+.consultant-proposal-stats>div{
+  padding:8px 9px;
+  border-radius:10px;
+  background:#f5faf7;
+  border:1px solid #e0ebe5;
+}
+
+.consultant-proposal-stats span,
+.consultant-proposal-stats strong{
+  display:block;
+}
+
+.consultant-proposal-stats span{
+  color:#7f9087;
+  font-size:8px;
+}
+
+.consultant-proposal-stats strong{
+  margin-top:2px;
+  color:#235039;
+  font-size:13px;
+}
+
+.consultant-proposal-message{
+  margin-top:9px;
+  color:#6d8076;
+  font-size:9px;
+}
+
+@media(max-width:1100px){
+  .management-stat-grid,
+  .management-submission-info-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .management-comparison-slots{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .management-stat-grid,
+  .management-filter-grid,
+  .management-submission-info-grid,
+  .management-pile-summary,
+  .consultant-proposal-stats{
+    grid-template-columns:1fr;
+  }
+
+  .management-submission-card,
+  .management-submission-title-row,
+  .management-modal-footer.split,
+  .management-comparison-head{
+    flex-direction:column;
+  }
+
+  .management-submission-actions{
+    width:100%;
+  }
+
+  .management-comparison-slots{
+    grid-template-columns:1fr;
+  }
+
+  .management-review-grid{
+    grid-template-columns:1fr;
+  }
+
+  .management-setting-row,
+  .management-setting-row>div,
+  .management-setting-section-head{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Management uploaded-file access */
+.management-file-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.management-file-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+}
+.management-file-info{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.management-file-info strong{
+  font-size:12px;
+  font-weight:700;
+  overflow-wrap:anywhere;
+}
+.management-file-info span{
+  font-size:10px;
+  color:var(--muted);
+}
+.management-open-file-btn{
+  flex:0 0 auto;
+}
+
+/* Management drawing rows use the same folder-first flow as Consultant */
+.management-drawing-folder-card{
+  font:inherit;
+  cursor:pointer;
+}
+
+.management-submission-modal .management-drawing-folder-card{
+  margin:0;
+}
+
+#managementDrawingFolderModal{
+  z-index:1010;
+}
+
+#managementDrawingFolderModal .drawing-folder-file-actions{
+  justify-content:flex-end;
+}
+
+/* Poundage exceedance reason in Management submission review */
+.management-poundage-exceeded{
+  color:#c62828 !important;
+  font-weight:800;
+}
+
+.management-poundage-exceed-reason{
+  margin-top:6px;
+  padding:7px 9px;
+  border:1px solid #e6b2ad;
+  border-radius:8px;
+  background:#fff8f7;
+  color:#7a3d38;
+  font-size:9px;
+  line-height:1.4;
+}
+
+.management-poundage-exceed-reason strong{
+  color:#b42318;
+  margin-right:4px;
+}

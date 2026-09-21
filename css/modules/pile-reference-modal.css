@@ -1,0 +1,74 @@
+/* ============================================================
+   Pile Reference action in Comparison + modal overlay
+   ============================================================ */
+.management-comparison-section-head-v124{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+}
+
+.management-pile-reference-comparison-btn-v124{
+  flex:0 0 auto;
+  min-height:26px;
+  padding:4px 10px;
+  border:1px solid #b9d5c6;
+  border-radius:8px;
+  background:#fff;
+  color:#2f6c4d;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.1;
+  cursor:pointer;
+}
+
+.management-pile-reference-comparison-btn-v124:hover{
+  background:#edf6f1;
+  border-color:#8fbea6;
+}
+
+#managementPileReferenceModalV124{
+  z-index:2650;
+}
+
+.pile-reference-modal-dialog-v124{
+  width:min(1120px, calc(100vw - 44px));
+}
+
+.pile-reference-modal-body-v124{
+  padding:16px 18px 20px;
+}
+
+.pile-reference-modal-content-v124{
+  max-width:none !important;
+  margin:0 !important;
+}
+
+.pile-reference-modal-toolbar-v124{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:12px;
+}
+
+.pile-reference-modal-toolbar-v124 .page-subtext{
+  margin:0;
+  max-width:650px;
+}
+
+body.management-pile-reference-modal-open-v124{
+  overflow:hidden;
+}
+
+@media (max-width:760px){
+  .pile-reference-modal-toolbar-v124{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .pile-reference-modal-toolbar-v124 .management-page-actions{
+    width:100%;
+    flex-wrap:wrap;
+  }
+}

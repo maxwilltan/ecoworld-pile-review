@@ -1,0 +1,810 @@
+/* ============================================================
+   functional project search + cleaner compact UI
+   ============================================================ */
+.project-search-wrap{
+  position:relative;
+}
+
+.project-search-results{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  right:0;
+  z-index:30;
+  max-height:240px;
+  overflow:auto;
+  padding:6px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 14px 32px rgba(21,54,40,.14);
+}
+
+.project-search-result{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 10px;
+  border:0;
+  border-radius:9px;
+  background:#fff;
+  color:var(--text);
+  text-align:left;
+}
+
+.project-search-result:hover{
+  background:var(--primary-soft);
+}
+
+.project-search-result strong,
+.project-search-result small{
+  display:block;
+}
+
+.project-search-result strong{
+  font-size:12px;
+}
+
+.project-search-result small{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.project-search-empty{
+  padding:10px;
+  color:var(--muted);
+  font-size:11px;
+  text-align:center;
+}
+
+/* Remove non-essential helper copy inside the editable table. */
+.overview-table .field-desc{
+  display:none !important;
+}
+
+.page-header{
+  margin-bottom:10px !important;
+}
+
+.compact-header h1{
+  margin-bottom:0 !important;
+}
+
+.table-card-head{
+  padding-top:14px !important;
+}
+
+.table-card-head h2{
+  margin-bottom:0 !important;
+}
+
+.inline-status{
+  padding:8px 10px !important;
+  margin-top:10px !important;
+  font-size:11px !important;
+}
+
+/* ============================================================
+   polished compact visual system
+   ============================================================ */
+body{
+  font-size:13px;
+}
+
+.app-shell{
+  grid-template-columns:224px 1fr !important;
+}
+
+.sidebar{
+  padding:13px !important;
+  gap:13px !important;
+}
+
+.sidebar-brand img{
+  width:34px !important;
+  height:34px !important;
+  border-radius:10px !important;
+}
+
+.sidebar-brand-copy strong{
+  font-size:13px;
+}
+
+.sidebar-brand-copy small{
+  font-size:9px;
+}
+
+.sidebar-toggle{
+  width:30px !important;
+  height:30px !important;
+  border-radius:9px !important;
+  font-size:11px;
+}
+
+.sidebar-section-label{
+  font-size:9px !important;
+  letter-spacing:.14em !important;
+}
+
+.account-card{
+  padding:9px !important;
+  border-radius:13px !important;
+  gap:8px !important;
+}
+
+.account-card-main{
+  gap:8px !important;
+}
+
+.account-avatar{
+  width:36px !important;
+  height:36px !important;
+  border-radius:11px !important;
+  font-size:13px !important;
+}
+
+.account-copy strong{
+  font-size:11px;
+}
+
+.account-copy small{
+  font-size:8.5px;
+  max-width:112px;
+}
+
+.account-logout-btn{
+  width:29px !important;
+  height:29px !important;
+  border-radius:9px !important;
+  font-size:11px;
+}
+
+.side-nav{
+  gap:6px !important;
+}
+
+.side-nav-btn{
+  gap:8px !important;
+  padding:9px 11px !important;
+  border-radius:11px !important;
+  font-size:11px;
+  font-weight:650;
+}
+
+.nav-icon{
+  width:20px !important;
+  flex-basis:20px !important;
+  font-size:11px;
+}
+
+.sidebar.collapsed{
+  width:72px !important;
+  padding:13px 8px !important;
+}
+
+.app-shell.sidebar-collapsed{
+  grid-template-columns:72px 1fr !important;
+}
+
+.main-shell{
+  padding:16px 18px !important;
+}
+
+.content-view{
+  max-width:1240px !important;
+}
+
+.page-header{
+  margin-bottom:8px !important;
+  align-items:center !important;
+}
+
+.compact-header h1{
+  font-size:25px !important;
+  line-height:1.08;
+}
+
+.header-pill{
+  padding:7px 10px !important;
+  font-size:10px !important;
+  border-radius:999px !important;
+  background:#fbfdfc !important;
+}
+
+.filter-card,
+.table-card,
+.empty-state{
+  border-radius:15px !important;
+  border-color:#dbe7e0 !important;
+  box-shadow:0 6px 18px rgba(21,54,40,.045) !important;
+}
+
+.filter-card{
+  padding:11px 12px !important;
+  margin-bottom:10px !important;
+}
+
+.filter-row{
+  gap:10px !important;
+}
+
+.filter-row-compact{
+  grid-template-columns:.9fr 1fr 1fr 1.18fr !important;
+}
+
+.field-group{
+  gap:4px !important;
+}
+
+.field-group label{
+  font-size:10px !important;
+  font-weight:700 !important;
+  color:#40584c;
+}
+
+.text-input,
+select,
+textarea{
+  border-radius:9px !important;
+  padding:8px 10px !important;
+  min-height:34px;
+  font-size:11px !important;
+}
+
+textarea{
+  min-height:70px !important;
+}
+
+.text-input:focus,
+select:focus,
+textarea:focus{
+  box-shadow:0 0 0 3px rgba(23,107,77,.08) !important;
+}
+
+.inline-status{
+  margin-top:8px !important;
+  padding:6px 8px !important;
+  border-radius:9px !important;
+  font-size:9.5px !important;
+  background:#fafcfb !important;
+}
+
+.table-card-head{
+  padding:11px 13px 0 !important;
+}
+
+.table-card-head-compact{
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.table-card-head h2{
+  font-size:18px !important;
+  letter-spacing:-.02em !important;
+}
+
+.table-revision-field{
+  width:116px !important;
+}
+
+.table-revision-field label{
+  font-size:9px !important;
+}
+
+.table-revision-field select{
+  min-height:31px !important;
+  padding:6px 9px !important;
+  font-size:10px !important;
+}
+
+.table-wrap{
+  padding:10px 13px 0 !important;
+}
+
+.overview-table{
+  min-width:820px !important;
+}
+
+.overview-table thead th{
+  padding:9px 11px !important;
+  font-size:10px !important;
+  background:#f2f8f5 !important;
+}
+
+.overview-table td{
+  padding:7px 10px !important;
+}
+
+.overview-table .section-row td{
+  padding:7px 10px !important;
+  font-size:9px !important;
+  letter-spacing:.09em !important;
+  background:#f7faf8 !important;
+}
+
+.item-col{
+  width:29% !important;
+}
+
+.value-col{
+  width:71% !important;
+}
+
+.field-label{
+  font-size:10.5px !important;
+  line-height:1.25;
+}
+
+.overview-table .text-input,
+.overview-table select,
+.overview-table textarea,
+.overview-table input[type="file"]{
+  font-size:10px !important;
+}
+
+.overview-table .text-input,
+.overview-table select{
+  min-height:31px !important;
+  padding:6px 9px !important;
+}
+
+.overview-table input[type="file"]{
+  max-width:100%;
+}
+
+.inline-hint{
+  margin-top:4px !important;
+  font-size:9px !important;
+}
+
+.file-chip{
+  padding:5px 8px !important;
+  font-size:9px !important;
+}
+
+.table-actions{
+  padding:10px 13px 12px !important;
+  gap:7px !important;
+}
+
+.primary-btn,
+.ghost-btn,
+.small-btn{
+  border-radius:9px !important;
+  padding:8px 12px !important;
+  font-size:10px !important;
+}
+
+.project-search-results{
+  top:calc(100% + 4px) !important;
+  max-height:190px !important;
+  padding:4px !important;
+  border-radius:10px !important;
+  box-shadow:0 10px 24px rgba(21,54,40,.12) !important;
+}
+
+.project-search-result{
+  padding:7px 8px !important;
+  border-radius:8px !important;
+}
+
+.project-search-result strong{
+  font-size:10px !important;
+}
+
+.project-search-result small{
+  font-size:8.5px !important;
+}
+
+.history-list{
+  gap:8px !important;
+  padding:11px !important;
+}
+
+.history-card{
+  padding:11px !important;
+  border-radius:12px !important;
+  gap:9px !important;
+}
+
+.history-card h3{
+  font-size:15px !important;
+}
+
+.meta-chip,
+.badge{
+  padding:5px 8px !important;
+  font-size:9px !important;
+}
+
+.empty-state{
+  min-height:180px !important;
+  padding:24px !important;
+}
+
+.empty-icon{
+  width:46px !important;
+  height:46px !important;
+  border-radius:14px !important;
+  font-size:18px !important;
+}
+
+.empty-state strong{
+  font-size:15px !important;
+}
+
+.empty-state span{
+  font-size:11px !important;
+}
+
+@media(max-width:1200px){
+  .filter-row-compact{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:720px){
+  .filter-row-compact{
+    grid-template-columns:1fr !important;
+  }
+
+  .main-shell{
+    padding:12px !important;
+  }
+
+  .compact-header h1{
+    font-size:22px !important;
+  }
+}
+
+/* ============================================================
+   fixed/sticky side navigation while submission scrolls
+   ============================================================ */
+@media (min-width:1025px){
+  .sidebar{
+    position:sticky !important;
+    top:0 !important;
+    align-self:start !important;
+    height:100vh !important;
+    max-height:100vh !important;
+    overflow:hidden !important;
+  }
+
+  .main-shell{
+    min-width:0 !important;
+  }
+}
+
+/* ============================================================
+   dropdown arrow spacing
+   ============================================================ */
+select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  padding-right:36px !important;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #73857c 50%),
+    linear-gradient(135deg, #73857c 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 50%,
+    calc(100% - 13px) 50%;
+  background-size:5px 5px,5px 5px;
+  background-repeat:no-repeat;
+}
+
+select:disabled{
+  background-image:
+    linear-gradient(45deg, transparent 50%, #a7b3ad 50%),
+    linear-gradient(135deg, #a7b3ad 50%, transparent 50%);
+}
+
+/* ============================================================
+   paired Gridline Dimension input
+   ============================================================ */
+.gridline-dimension-box{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  width:100%;
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+}
+
+.gridline-dimension-item{
+  display:block;
+  min-width:0;
+}
+
+.gridline-dimension-item > span{
+  display:block;
+  margin:0 0 5px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.gridline-dimension-input-wrap{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+
+.gridline-dimension-input-wrap .text-input{
+  min-width:0;
+  width:100%;
+  margin:0;
+}
+
+.gridline-dimension-input-wrap small{
+  flex:0 0 auto;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+}
+
+@media(max-width:560px){
+  .gridline-dimension-box{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ============================================================
+   compact inline Gridline Dimension pair
+   Keep Vertical + Horizontal on the same table row as the title.
+   ============================================================ */
+.gridline-dimension-box{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex-wrap:nowrap !important;
+  gap:14px !important;
+  width:auto !important;
+  max-width:100% !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+
+.gridline-dimension-item{
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  flex:0 0 auto !important;
+  min-width:0 !important;
+  margin:0 !important;
+}
+
+.gridline-dimension-item > span{
+  display:inline-block !important;
+  flex:0 0 auto !important;
+  margin:0 !important;
+  color:var(--muted) !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  line-height:1.2 !important;
+  white-space:nowrap !important;
+}
+
+.gridline-dimension-input-wrap{
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  flex:0 0 auto !important;
+  min-width:0 !important;
+}
+
+.gridline-dimension-input-wrap .text-input{
+  width:118px !important;
+  min-width:0 !important;
+  max-width:118px !important;
+  margin:0 !important;
+}
+
+.gridline-dimension-input-wrap small{
+  flex:0 0 auto !important;
+  margin:0 !important;
+  font-size:10px !important;
+}
+
+@media(max-width:720px){
+  .gridline-dimension-box{
+    flex-wrap:wrap !important;
+    gap:8px 12px !important;
+  }
+
+  .gridline-dimension-input-wrap .text-input{
+    width:102px !important;
+    max-width:102px !important;
+  }
+}
+
+/* ============================================================
+   Gridline pair fills the available value-cell width
+   The compacting is for keeping the row title on one line; the
+   Vertical / Horizontal value boxes should use the remaining space.
+   ============================================================ */
+.gridline-dimension-box{
+  display:flex !important;
+  align-items:center !important;
+  flex-wrap:nowrap !important;
+  gap:14px !important;
+  width:100% !important;
+  max-width:none !important;
+}
+
+.gridline-dimension-item{
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  flex:1 1 0 !important;
+  min-width:0 !important;
+}
+
+.gridline-dimension-input-wrap{
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  flex:1 1 auto !important;
+  min-width:0 !important;
+}
+
+.gridline-dimension-input-wrap .text-input{
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  flex:1 1 auto !important;
+}
+
+@media(max-width:720px){
+  .gridline-dimension-box{
+    flex-wrap:wrap !important;
+  }
+
+  .gridline-dimension-item{
+    flex:1 1 220px !important;
+  }
+
+  .gridline-dimension-input-wrap .text-input{
+    width:100% !important;
+    max-width:none !important;
+  }
+}
+
+/* Month/Year selector beside Revision */
+.table-year-field{
+  width:116px !important;
+}
+
+.table-year-field label{
+  font-size:9px !important;
+}
+
+.table-year-field select{
+  width:100%;
+  min-height:31px !important;
+  padding:6px 9px !important;
+  font-size:10px !important;
+}
+
+/* sticky consultant submission header */
+#overviewView .submission-sticky-shell{
+  position:sticky;
+  top:0;
+  z-index:40;
+  padding-top:4px;
+  margin:-4px 0 10px;
+  background:linear-gradient(180deg, rgba(244,247,245,.98) 0%, rgba(244,247,245,.98) 78%, rgba(244,247,245,0) 100%);
+  backdrop-filter:blur(6px);
+}
+
+#overviewView .submission-sticky-shell .page-header{
+  margin-bottom:8px !important;
+}
+
+#overviewView .submission-sticky-shell .filter-card{
+  margin-bottom:0 !important;
+}
+
+#overviewView .table-card{
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width: 900px){
+  #overviewView .submission-sticky-shell{
+    top:0;
+    padding-top:2px;
+  }
+}
+
+/* hide consultant top descriptive status under project selectors */
+#overviewView #saveStatus{
+  display:none !important;
+}
+#overviewView .filter-card.compact-card{
+  padding-bottom:11px !important;
+}
+
+/* cleaner locked/disabled Consultant form */
+#overviewView.submission-locked .overview-table,
+#overviewView .submission-locked .overview-table{
+  opacity:1 !important;
+}
+
+#overviewView input:disabled,
+#overviewView textarea:disabled,
+#overviewView select:disabled,
+#overviewView button:disabled{
+  opacity:1 !important;
+}
+
+#overviewView input:disabled,
+#overviewView textarea:disabled,
+#overviewView select:disabled{
+  background-color:#f5f8f6 !important;
+  color:#89978f !important;
+  border-color:#dce6e0 !important;
+}
+
+#overviewView select:disabled{
+  appearance:auto !important;
+  -webkit-appearance:menulist !important;
+  -moz-appearance:auto !important;
+  background-image:none !important;
+  padding-right:10px !important;
+}
+
+#overviewView .submission-lock-notice{
+  opacity:1 !important;
+}
+
+/* Consultant submission action: make locked Submit unmistakably disabled */
+#overviewView #submitBtn:disabled{
+  background:#d7dcda !important;
+  color:#8a9490 !important;
+  border:1px solid #cbd2cf !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  cursor:not-allowed !important;
+  transform:none !important;
+}
+#overviewView #submitBtn:disabled:hover{
+  background:#d7dcda !important;
+  transform:none !important;
+}
+
+/* Consultant form action: make locked Clear Form unmistakably disabled */
+#overviewView #clearFormBtn:disabled{
+  background:#eef1ef !important;
+  color:#9aa39f !important;
+  border:1px solid #d7ddda !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  cursor:not-allowed !important;
+  transform:none !important;
+}
+#overviewView #clearFormBtn:disabled:hover{
+  background:#eef1ef !important;
+  color:#9aa39f !important;
+  border-color:#d7ddda !important;
+  transform:none !important;
+}
+
+/* Consultant account display helpers */
+#appShell:not(.management-mode-v126) .account-copy strong{
+  display:block;
+  max-width:128px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+

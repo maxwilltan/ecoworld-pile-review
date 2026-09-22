@@ -614,7 +614,7 @@ async function permanentlyDeleteSubmissionV141(item){
   return true;
 }
 
-function showDeleteSubmissionConfirmV141(item){
+function showDeleteSubmissionConfirmV141(item,onDeleted=null){
   if(state.auth?.role !== "Management") return;
   const old = document.getElementById("submissionDeleteBackdrop");
   if(old) old.remove();
@@ -675,6 +675,7 @@ function showDeleteSubmissionConfirmV141(item){
 
     try{
       await permanentlyDeleteSubmissionV141(item);
+      if(typeof onDeleted === "function") onDeleted(item);
       close();
     }catch(error){
       console.error("Unable to delete submission", error);

@@ -1,3 +1,44 @@
+const ECO_PORTAL_HISTORY_VIEW = "ecoPortalView";
+let browserBackSignOutInProgress = false;
+
+function setPortalHistoryView(view, push=false){
+  try{
+    const nextState = {...(window.history.state || {}), [ECO_PORTAL_HISTORY_VIEW]:view};
+    if(push){
+      window.history.pushState(nextState, "", window.location.href);
+    }else{
+      window.history.replaceState(nextState, "", window.location.href);
+    }
+  }catch(error){
+    console.warn("Unable to update portal browser history", error);
+  }
+}
+
+function ensureAuthenticatedHistoryEntry(){
+  if(window.history.state?.[ECO_PORTAL_HISTORY_VIEW] === "app") return;
+  setPortalHistoryView("login");
+  setPortalHistoryView("app", true);
+}
+
+function showLoginPage(){
+  setAuth(null);
+  $("appShell").classList.add("hidden");
+  $("loginPage").classList.remove("hidden");
+  $("passwordInput").value = "";
+  setPortalHistoryView("login");
+}
+
+async function signOutToLogin(){
+  if(browserBackSignOutInProgress) return;
+  browserBackSignOutInProgress = true;
+  showLoginPage();
+  try{
+    if(window.EcoBackend) await window.EcoBackend.signOut();
+  }finally{
+    browserBackSignOutInProgress = false;
+  }
+}
+
 function bindEvents(){
   $("loginForm").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -44,19 +85,9 @@ function bindEvents(){
     $("passwordInput").value = demo.password;
   });
 
-  $("logoutBtn").addEventListener("click", async () => {
-    if(window.EcoBackend) await window.EcoBackend.signOut();
-    setAuth(null);
-    $("appShell").classList.add("hidden");
-    $("loginPage").classList.remove("hidden");
-  });
+  $("logoutBtn").addEventListener("click", signOutToLogin);
 
-  $("managementHeaderLogoutBtn")?.addEventListener("click", async () => {
-    if(window.EcoBackend) await window.EcoBackend.signOut();
-    setAuth(null);
-    $("appShell").classList.add("hidden");
-    $("loginPage").classList.remove("hidden");
-  });
+  $("managementHeaderLogoutBtn")?.addEventListener("click", signOutToLogin);
 
   $("sidebarToggle").addEventListener("click", () => {
     state.sidebarCollapsed = !state.sidebarCollapsed;
@@ -416,6 +447,7 @@ function launchApp(){
   configureRoleNavigation(
     activeAuth.role
   );
+  ensureAuthenticatedHistoryEntry();
 
   /*
     Set the correct role landing page BEFORE making
@@ -477,12 +509,22 @@ function launchApp(){
 
 bindEvents();
 bindPoundageCalculatorEvents();
+window.addEventListener("popstate", event => {
+  if(event.state?.[ECO_PORTAL_HISTORY_VIEW] === "login" && state.auth){
+    void signOutToLogin();
+  }
+});
 // Restore only a valid Supabase session. The old browser-only auth cache is never trusted.
 document.addEventListener("DOMContentLoaded", async () => {
   if(window.EcoBackend){
     const restored = await window.EcoBackend.boot();
-    if(restored) launchApp();
+    if(restored){
+      launchApp();
+    }else{
+      setPortalHistoryView("login");
+    }
     return;
   }
   launchApp();
+  if(!state.auth) setPortalHistoryView("login");
 });

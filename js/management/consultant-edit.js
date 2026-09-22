@@ -131,6 +131,7 @@
             <span class="edit-permission-dot-v43" aria-hidden="true"></span>
             <span>${open ? "Lock editing" : "Allow editing"}</span>
           </button>
+          <button class="edit-delete-submission-v48" type="button" data-edit-delete-submission-v48="${escapeHtml(item.id)}">Delete submission</button>
         </div>
       </article>`;
     }).join("") : `<div class="edit-empty-v31 edit-empty-row-v39">${account() ? "No past submission" : "No consultant selected"}</div>`}</div>`;
@@ -308,6 +309,16 @@
 
     el("editPastListV31").addEventListener("click", async event => {
       if(!isManagement()) return;
+      const deleteButton = event.target.closest("[data-edit-delete-submission-v48]");
+      if(deleteButton){
+        const item = selectedSubmissions().find(submission => String(submission.id) === String(deleteButton.dataset.editDeleteSubmissionV48));
+        if(!item) return;
+        showDeleteSubmissionConfirmV141(item, () => {
+          renderPast();
+          el("editHistoryNoticeV31").textContent = "Submission and its uploaded drawing files were deleted.";
+        });
+        return;
+      }
       const versions = event.target.closest("[data-edit-versions-v31]");
       if(versions){
         window.showSubmissionVersionHistoryV31(versions.dataset.editVersionsV31);

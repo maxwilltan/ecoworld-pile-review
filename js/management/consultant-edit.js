@@ -122,8 +122,7 @@
           <strong>${escapeHtml(item.project || "Unnamed project")}</strong>
           <div class="edit-submission-meta-inline-v43">
             <small>${escapeHtml(item.region || "—")} · ${escapeHtml(item.businessUnit || "—")}</small>
-            <span>${escapeHtml(item.revision || "—")}</span>
-            <span>${escapeHtml(typeof submissionYearLabel === "function" ? submissionYearLabel(item) : item.year || "—")}</span>
+            <span class="edit-submission-revision-date-v49">${escapeHtml(item.revision || "—")} · ${escapeHtml(typeof submissionYearLabel === "function" ? submissionYearLabel(item) : item.year || "—")}</span>
           </div>
         </div>
         <div class="edit-submission-actions-v31 edit-submission-actions-v38">

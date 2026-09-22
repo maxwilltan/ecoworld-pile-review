@@ -233,6 +233,7 @@
 
 /* custom confirmation for deleting a consultant submission. */
 .submission-delete-backdrop{
+  z-index:5100;
   background:rgba(54,30,30,.38);
 }
 

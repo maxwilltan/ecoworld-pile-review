@@ -240,9 +240,9 @@ function showSubmissionSuccessNotice(payload){
   const close = () => {
     backdrop.remove();
     document.body.classList.remove("modal-open");
-    // Refresh after a successful submission so the Consultant returns to a
-    // clean, newly loaded portal state and all saved data is re-read.
-    window.location.reload();
+    // The submission and both views are already refreshed after the save.
+    // Keep the current Supabase session and portal state in place instead of
+    // reloading through the login screen while the session is restored.
   };
 
   backdrop.addEventListener("click", event => {

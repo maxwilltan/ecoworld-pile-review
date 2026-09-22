@@ -1001,8 +1001,8 @@
 
 #managementSettingsModal .edit-submission-meta-inline-v43{
   display:flex !important;
-  align-items:center !important;
-  flex-wrap:wrap !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
   gap:0 !important;
   margin-top:2px !important;
   color:#829188 !important;
@@ -1018,10 +1018,8 @@
   font-weight:500 !important;
 }
 
-#managementSettingsModal .edit-submission-meta-inline-v43 span::before{
-  content:"·";
-  margin:0 6px;
-  color:#b0bbb4;
+#managementSettingsModal .edit-submission-revision-date-v49{
+  white-space:nowrap !important;
 }
 
 #managementSettingsModal .edit-submission-line-v38,

@@ -1082,6 +1082,26 @@
   border-color:#b9d8c4 !important;
 }
 
+#managementSettingsModal .edit-delete-submission-v48{
+  min-height:30px !important;
+  padding:6px 10px !important;
+  border:1px solid #e3c9c9 !important;
+  border-radius:999px !important;
+  background:#fff8f8 !important;
+  color:#9a3f3f !important;
+  font:inherit !important;
+  font-size:10.5px !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  white-space:nowrap !important;
+}
+
+#managementSettingsModal .edit-delete-submission-v48:hover{
+  background:#fceeee !important;
+  border-color:#dbaaaa !important;
+  color:#7f2f2f !important;
+}
+
 #managementSettingsModal .edit-permission-action-v43:disabled{
   opacity:.45 !important;
   cursor:default !important;
@@ -1140,6 +1160,12 @@
   padding:4px 8px !important;
   font-size:10px !important;
   gap:6px !important;
+}
+
+#managementSettingsModal .edit-delete-submission-v48{
+  min-height:26px !important;
+  padding:4px 8px !important;
+  font-size:10px !important;
 }
 
 #managementSettingsModal .edit-project-column-v39 .edit-list-action-v38{

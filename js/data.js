@@ -259,7 +259,7 @@ const OVERVIEW_SECTIONS = [
       { key: "poundageRcBeamCarpark", label: "RC Beam – Carpark (kg/m³)", type: "number", step: "0.01", placeholder: "Enter value" },
       {
         key: "poundageRcBeamTypical",
-        label: "RC Beam – Typ Unit Floor (kg/m³)",
+        label: "RC Beam – Typical Unit Floor (kg/m³)",
         type: "number",
         step: "0.01",
         placeholder: "Enter value",
